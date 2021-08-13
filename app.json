@@ -1,6 +1,9 @@
 {
-  "pages":[
-    "pages/dome/dome",
+  "pages":[ 
+    "pages/index/index",  
+    "pages/team/index",
+    "pages/added/index",
+    "pages/personal/index"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -8,6 +11,31 @@
     "navigationBarTitleText": "WeTeam",
     "navigationBarTextStyle":"black"
   },
+
+  "tabBar": {
+    "color": "",
+    "selectedColor": "",
+    "backgroundColor": "",
+    "position": "bottom",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home.png"
+      },
+      {
+        "pagePath": "pages/team/index",
+        "text": "组队",
+        "iconPath": "icons/team.png",
+        "selectedIconPath": "icons/team.png"
+      }
+    ]
+  },
+  
+    
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
