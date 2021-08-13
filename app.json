@@ -1,13 +1,11 @@
 {
   "pages":[
     "pages/dome/dome",
-    "pages/index/index",
-    "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "WeTeam",
     "navigationBarTextStyle":"black"
   },
   "style": "v2",
