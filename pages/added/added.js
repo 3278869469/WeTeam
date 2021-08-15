@@ -1,4 +1,4 @@
-// pages/added/index.js
+// pages/added/added.js
 Page({
 
   /**

@@ -1,4 +1,4 @@
-// pages/shouquan/index.js
+// pages/personal/personal.js
 Page({
 
   /**

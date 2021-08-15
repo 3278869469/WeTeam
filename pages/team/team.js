@@ -1,4 +1,4 @@
-// pages/team/index.js
+// pages/team/team.js
 Page({
 
   /**
