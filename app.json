@@ -1,41 +1,53 @@
 {
-  "pages":[ 
-    "pages/index/index",  
+  "pages": [
+    "pages/index/index",
     "pages/team/index",
     "pages/added/index",
     "pages/personal/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeTeam",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
 
   "tabBar": {
-    "color": "",
-    "selectedColor": "",
+    "color": "#707070",
+    "selectedColor": "#1296db",
     "backgroundColor": "",
     "position": "bottom",
     "borderStyle": "black",
-    "list": [
-      {
+    "list": [{
         "pagePath": "pages/index/index",
         "text": "首页",
-        "iconPath": "icons/home.png",
-        "selectedIconPath": "icons/home.png"
+        "iconPath": "icons/首页.png",
+        "selectedIconPath": "icons/首页-选中.png"
       },
       {
         "pagePath": "pages/team/index",
-        "text": "组队",
-        "iconPath": "icons/team.png",
-        "selectedIconPath": "icons/team.png"
+        "text": "加入队伍",
+        "iconPath": "icons/加入队伍.png",
+        "selectedIconPath": "icons/加入队伍-选中.png"
+      },
+      {
+        "pagePath": "pages/team/index",
+        "iconPath": "icons/创建队伍.png",
+        "selectedIconPath": "icons/创建队伍.png"
+      },
+      {
+        "pagePath": "pages/team/index",
+        "text": "已加入队伍",
+        "iconPath": "icons/已加入队伍.png",
+        "selectedIconPath": "icons/已加入队伍-选中.png"
+      }, {
+        "pagePath": "pages/team/index",
+        "text": "个人中心",
+        "iconPath": "icons/个人中心.png",
+        "selectedIconPath": "icons/个人中心-选中.png"
       }
     ]
   },
-  
-    
-
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
