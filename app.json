@@ -4,7 +4,6 @@
     "pages/team/index",
     "pages/added/index",
     "pages/personal/index",
-    "pages/login/index" ,
     "pages/shouquan/index"
   ],
   "window": {
