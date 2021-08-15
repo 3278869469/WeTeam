@@ -4,7 +4,8 @@
     "pages/index/index",
     "pages/team/index",
     "pages/added/index",
-    "pages/personal/index"
+    "pages/personal/index",
+    "pages/shouquan/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
