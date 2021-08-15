@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* pages/login/index.wxss */
 
@@ -38,3 +39,6 @@
   margin: 70rpx 50rpx;
   font-size: 35rpx;
 }
+=======
+/* pages/login/index.wxss */
+>>>>>>> master

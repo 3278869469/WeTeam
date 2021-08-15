@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 // pages/login/index.js
 Page({
@@ -100,3 +101,10 @@ Page({
     wx.setStorageSync('isLogin', false)
   }
 })
+=======
+Page({
+  getUserProfile(e){
+    console.log(e);
+  }
+})
+>>>>>>> master

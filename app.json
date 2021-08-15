@@ -5,6 +5,10 @@
     "pages/team/index",
     "pages/added/index",
     "pages/personal/index",
+<<<<<<< HEAD
+=======
+    "pages/login/index" ,
+>>>>>>> master
     "pages/shouquan/index"
   ],
   "window": {

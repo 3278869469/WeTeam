@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 
   "usingComponents": {
     
@@ -7,4 +8,8 @@
   
 
 
+=======
+  "usingComponents": {},
+  "navigationBarTitleText":"登陆"
+>>>>>>> master
 }
