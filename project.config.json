@@ -24,7 +24,7 @@
     "lazyloadPlaceholderEnable": false,
     "useMultiFrameRuntime": true,
     "useApiHook": true,
-    "useApiHostProcess": true,
+    "useApiHostProcess": false,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -39,7 +39,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.19.0",
-  "appid": "wx1e94c72e18323019",
+  "appid": "wx82ef50c986e1eaf9",
   "projectname": "WeTeam",
   "debugOptions": {
     "hidedInDevtools": []
@@ -50,6 +50,8 @@
     "servePath": ""
   },
   "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []
