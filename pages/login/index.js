@@ -99,5 +99,4 @@ Page({
     wx.setStorageSync('userInfo', null)
     wx.setStorageSync('isLogin', false)
   }
-
 })
