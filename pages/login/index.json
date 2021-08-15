@@ -1,15 +1,7 @@
 {
-<<<<<<< HEAD
-
   "usingComponents": {
     
   },
   "navigationBarTitleText": "请先登录"
-  
 
-
-=======
-  "usingComponents": {},
-  "navigationBarTitleText":"登陆"
->>>>>>> master
 }

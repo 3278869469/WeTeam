@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <!--pages/login/index.wxml-->
 <view wx:if="{{!isLogin}}">
     <view class='header'>
@@ -26,6 +26,3 @@
     </view>
     <button bindtap="loginOut">退出登录</button>
 </view>
-=======
-<button type="primary" plain open-type="getUserInfo" bindtap='getUserProfile'>登陆</button>
->>>>>>> master
