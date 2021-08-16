@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/login/login",
+    "pages/phoneLogin/phoneLogin",
     "pages/added/added",
     "pages/index/index",
     "pages/team/team",

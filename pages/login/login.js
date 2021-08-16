@@ -90,7 +90,7 @@ Page({
       }
     })
   },
-
+  
   loginOut() {
     this.setData({
       isLogin: false,

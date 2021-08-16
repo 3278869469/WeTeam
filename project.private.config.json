@@ -23,6 +23,12 @@
           "pathName": "pages/shouquan/index",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/phoneLogin/phoneLogin",
+          "pathName": "pages/phoneLogin/phoneLogin",
+          "query": "",
+          "scene": null
         }
       ]
     }

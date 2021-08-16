@@ -1,0 +1,16 @@
+<!--pages/logins/logins.wxml-->
+<view class="container">
+  <view class="title">登录</view>
+  <form catchsubmit="login">
+    <view class="inputView">
+      <input class="inputText" placeholder="请输入手机号" name="phone" bindblur="phone" />
+    </view>
+    <view class="inputView">
+      <input class="inputText" placeholder="请输入验证码" name="code" />
+      <button class="line" disabled="{{disabled}}" size="mini" bindtap="sendcode">{{codebtn}}</button>
+    </view>
+    <view class="loginBtnView">
+      <button class="loginBtn" type="primary" formType="submit">登录</button>
+    </view>
+  </form>
+</view>

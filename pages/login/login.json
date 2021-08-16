@@ -1,7 +1,5 @@
 {
-  "usingComponents": {
-    
-  },
-  "navigationBarTitleText": "请先登录"
+  "usingComponents": {},
+  "navigationBarTitleText": "微信授权登录"
 
 }
