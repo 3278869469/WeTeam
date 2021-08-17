@@ -1,102 +1,87 @@
-
-// pages/login/index.js
+//index.js
+//获取应用实例
+const app = getApp()
+ 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-    userInfo: '',
-    isLogin: false
+    username: '',
+    password: ''
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    let userInfo = wx.getStorageSync('userInfo')
-    let isLogin = wx.getStorageSync('isLogin')
-    this.setData({
-      userInfo: userInfo,
-      isLogin: isLogin
+  //事件处理函数
+  bindViewTap: function() {
+    wx.navigateTo({
+      url: '../logs/logs'
     })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
-
+    // 生命周期函数--监听页面显示
+    wx.hideTabBar({})
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  onLoad: function () {
+   
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  },
-
-  login() {
-    console.log('登录点击事件')
-    wx.getUserProfile({
-      desc: '用于完善会员资料', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
-      success: (res) => {
-        console.log('授权成功', res.userInfo)
-        let userInfo = res.userInfo
-        this.setData({
-          isLogin: true,
-          userInfo: userInfo
-        })
-        wx.setStorageSync('userInfo', userInfo)
-        wx.setStorageSync('isLogin', true)
-      },
-      fail: (err) => {
-        console.log('授权失败', err)
-      }
-    })
-  },
-  
-  loginOut() {
+ 
+  // 获取输入账号 
+  usernameInput: function (e) {
     this.setData({
-      isLogin: false,
-      userInfo: null
+      username: e.detail.value
     })
-    wx.setStorageSync('userInfo', null)
-    wx.setStorageSync('isLogin', false)
+  },
+ 
+  // 获取输入密码 
+  passwordInput: function (e) {
+    this.setData({
+      password: e.detail.value
+    })
+  },
+ 
+  // 登录处理
+  login: function () {
+    var that = this;
+    if (this.data.username.length == 0 || this.data.password.length == 0) {
+      wx.showToast({
+        title: '账号或密码不能为空',
+        icon: 'none',
+        duration: 2000
+      })
+    } else {
+      wx.request({
+        url: app.globalData.globalReqUrl +'/login/login', // 仅为示例，并非真实的接口地址
+        method: 'post',
+        data: {
+          username: that.data.username,
+          password: that.data.password
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded' // 默认值
+        },
+        success(res) {
+          if (res.data.code == "OK") {
+            var unitName = res.data.data.User.unitName;
+            var unitId = res.data.data.User.unitId;
+            wx.setStorageSync('unitId', unitId);
+            wx.setStorageSync('unitName', unitName);
+            wx.switchTab({
+              url: '../overviewData/realTimeData'
+            })
+          } else {
+            wx.showToast({
+              title: res.data.message,
+              icon: 'none',
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
+  },
+
+  // 注册
+  register(){
+    // 跳转到注册界面
+    wx.navigateTo({
+      url: '../register/register',
+    })
   }
 })
+ 

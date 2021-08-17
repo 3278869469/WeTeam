@@ -29,6 +29,12 @@
           "pathName": "pages/phoneLogin/phoneLogin",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/login/login",
+          "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/empower/empower",
     "pages/login/login",
-    "pages/phoneLogin/phoneLogin",
+    "pages/register/register",
     "pages/added/added",
     "pages/index/index",
     "pages/team/team",

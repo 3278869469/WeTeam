@@ -1,18 +1,27 @@
+<view class="container">
 
-<!--pages/login/index.wxml-->
-<view wx:if="{{!isLogin}}">
-    <view class='header'>
-        <image src='/icons/logo.png'></image>
+    <view class="login-icon">
+        <image class="login-img" src="/icons/logo2宽.jpg"></image>
     </view>
-    <view class='content'>
-        <view>申请获取以下权限</view>
-        <text>获得你的公开信息(昵称，头像等)</text>
+    <view class="login-from">
+        <!--账号-->
+        <view class="inputView">
+            <image class="nameImage" src="/icons/账号.png"></image>
+            <label class="loginLab">手机号</label>
+            <input class="inputText" placeholder="请输入手机号" bindinput="usernameInput" />
+        </view>
+        <view class="line"></view>
+        <!--密码-->
+        <view class="inputView">
+            <image class="keyImage" src="/icons/密码.png"></image>
+            <label class="loginLab">密码</label>
+            <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+        </view>
+
+        <!--按钮-->
+        <view class="loginBtnView">
+            <button class="loginBtn" style="width: 95%;" bindtap="login">登录</button>
+            <button class="registerBtn" style="width: 95%;" bindtap="register">没有账号，注册账号</button>
+        </view>
     </view>
-    <button class='bottom' type='primary' open-type="getUserInfo" lang="zh_CN" bindtap="login">
-        授权登录
-    </button>
-</view>
-<!-- <button wx:if="{{!isLogin}}" bindtap="login">授权登录</button> -->
-<view wx:else>
-    window.open('/pages/phoneLogin/phoneLogin');
 </view>

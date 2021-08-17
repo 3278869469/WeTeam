@@ -1,40 +1,102 @@
-
-/* pages/login/index.wxss */
-
-.header {
-  margin: 90rpx 0 90rpx 50rpx;
-  /* border-bottom: 1px solid #ccc; */
-  text-align: center;
-  width: 650rpx;
-  height: 300rpx;
-  line-height: 450rpx;
+page{ 
+  height: 100%; 
+ } 
+  
+ .container { 
+  height: 100%; 
+  display: flex; 
+  flex-direction: column; 
+  padding: 0; 
+  box-sizing: border-box; 
+  /* background-color: rgb(156, 23, 78) */
+ } 
+  
+ /*登录图片*/
+ .login-icon{ 
+  flex: none; 
+ } 
+  
+ .login-img{ 
+  width: 750rpx;
+ } 
+  
+ /*表单内容*/
+ .login-from { 
+  margin-top: 20px; 
+  flex: auto; 
+  height:100%; 
+  padding-left: 20px;
+  padding-right: 20px;
+ } 
+  
+ .inputView { 
+  /* background-color: #fff;  */
+  line-height: 45px; 
+  border-radius:20px;
+   border:1px solid #999999;
+ } 
+  
+ /*输入框*/
+ .nameImage, .keyImage { 
+  margin-left: 22px; 
+  width: 18px; 
+  height: 16px
+ } 
+  
+ .loginLab { 
+  margin: 15px 15px 15px 10px; 
+  color: #545454; 
+  font-size: 14px
+ } 
+  
+ .inputText { 
+  flex: block; 
+  float: right; 
+  text-align: right; 
+  margin-right: 30px; 
+  margin-top: 11px;
+  color: #515151; 
+  font-size: 15px
+ } 
+ .line { 
+  margin-top: 8px;
+ } 
+  
+ /* .line { 
+  width: 100%; 
+  height: 1px; 
+  background-color: #cccccc; 
+  margin-top: 1px; 
+ }  */
+  
+ /*按钮*/
+ .loginBtnView { 
+  width: 100%; 
+  height: auto; 
+  /* background-color:#DCDCDC;  */
+  margin-top: 0px; 
+  margin-bottom: 0px; 
+  padding-bottom: 0px; 
+ } 
+  
+ .loginBtn { 
+  margin-top: 40px; 
+  border-radius:10px;
+  color: white;
+  background-color: #1296db;
+ }
+ /* 按钮点击改变颜色 */
+.loginBtn.button-hover {
+  color: white;
+  background-color: #1e89c1;
 }
 
-.header image {
-  width: 380rpx;
-  height: 380rpx;
+.registerBtn{
+  margin-top: 10px; 
+  color: rgb(202, 199, 199);
+  background-color: white;
 }
-
-.content {
-  margin-left: 50rpx;
-  margin-bottom: 90rpx;
-}
-
-.content view{
-  display: flex;
-  justify-content: center;
-}
-
-.content text {
-  display: block;
-  color: #9d9d9d;
-  margin-top: 40rpx;
-  display: flex;
-  justify-content: center;
-}
-
-.bottom {
-  border-radius: 80rpx;
-  margin: 70rpx 50rpx;
-  font-size: 35rpx;
+.registerBtn.button-hover{
+  color: rgb(155, 153, 153);
+  background-color: white;
 }
