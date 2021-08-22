@@ -13,26 +13,14 @@
     "miniprogram": {
       "list": [
         {
-          "name": "登陆页面",
-          "pathName": "pages/login/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "授权",
-          "pathName": "pages/shouquan/index",
-          "query": "",
-          "scene": null
-        },
-        {
-          "name": "pages/phoneLogin/phoneLogin",
-          "pathName": "pages/phoneLogin/phoneLogin",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "pages/login/login",
           "pathName": "pages/login/login",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/me/me",
+          "pathName": "pages/me/me",
           "query": "",
           "scene": null
         }

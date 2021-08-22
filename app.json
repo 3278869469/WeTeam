@@ -1,10 +1,11 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/empower/empower",
     "pages/login/login",
     "pages/register/register",
+    "pages/me/me",
     "pages/added/added",
-    "pages/index/index",
     "pages/team/team",
     "pages/personal/personal"
   ],
@@ -45,7 +46,7 @@
         "iconPath": "icons/已加入队伍.png",
         "selectedIconPath": "icons/已加入队伍-选中.png"
       }, {
-        "pagePath": "pages/team/team",
+        "pagePath": "pages/me/me",
         "text": "个人中心",
         "iconPath": "icons/个人中心.png",
         "selectedIconPath": "icons/个人中心-选中.png"

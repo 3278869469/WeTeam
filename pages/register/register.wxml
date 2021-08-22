@@ -1,2 +1,32 @@
-<!--pages/register/register.wxml-->
-<text>pages/register/register.wxml</text>
+<view class="container">
+    <view class="login-icon">
+        <image class="login-img" src="/icons/logo2宽.jpg"></image>
+    </view>
+    <view class="login-from">
+        <!--账号-->
+        <view class="inputView">
+            <image class="nameImage" src="/icons/账号.png"></image>
+            <label class="loginLab">手机号</label>
+            <input class="inputText" placeholder="请输入手机号" bindinput="usernameInput" />
+        </view>
+        <view class="line"></view>
+        <!--密码-->
+        <view class="inputView">
+            <image class="keyImage" src="/icons/密码.png"></image>
+            <label class="loginLab">密码</label>
+            <input class="inputText" password="true" placeholder="请输入密码" bindinput="passwordInput" />
+        </view>
+        <view class="line"></view>
+        <!--确认密码密码-->
+        <view class="inputView">
+            <image class="keyImage" src="/icons/密码.png"></image>
+            <label class="loginLab">确认密码</label>
+            <input class="inputText" password="true" placeholder="请确认密码" bindinput="passwordReinput" />
+        </view>
+
+        <!--按钮-->
+        <view class="loginBtnView">
+            <button class="loginBtn" style="width: 95%;" bindtap="register">注册</button>
+        </view>
+    </view>
+</view>

@@ -1,87 +1,87 @@
-//index.js
-//获取应用实例
-const app = getApp()
- 
+// //获取应用实例
+// const app = getApp()
+
 Page({
   data: {
-    username: '',
+    phone: '',
     password: ''
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onShow: function () {
-    // 生命周期函数--监听页面显示
-    wx.hideTabBar({})
-  },
   onLoad: function () {
-   
-  },
- 
-  // 获取输入账号 
-  usernameInput: function (e) {
-    this.setData({
-      username: e.detail.value
+    wx.cloud.init({
+      traceUser: true,
+
     })
   },
- 
+
+  // 获取输入账号 
+  phoneInput: function (e) {
+    this.setData({
+      phone: e.detail.value
+    })
+  },
+
   // 获取输入密码 
   passwordInput: function (e) {
     this.setData({
       password: e.detail.value
     })
   },
- 
+
   // 登录处理
   login: function () {
-    var that = this;
-    if (this.data.username.length == 0 || this.data.password.length == 0) {
+    let that = this
+    let str = /^1\d{10}$/
+    // 是否为空效验
+    if (this.data.phone.length == 0 || this.data.password.length == 0) {
       wx.showToast({
-        title: '账号或密码不能为空',
-        icon: 'none',
-        duration: 2000
+        title: '手机号或密码不能为空',
+        icon: 'none'
+      })
+      // 手机号正则效验
+    } else if (!str.test(this.data.phone)) {
+      wx.showToast({
+        title: '手机号不正确',
+        icon: 'none'
       })
     } else {
-      wx.request({
-        url: app.globalData.globalReqUrl +'/login/login', // 仅为示例，并非真实的接口地址
-        method: 'post',
-        data: {
-          username: that.data.username,
-          password: that.data.password
-        },
-        header: {
-          'content-type': 'application/x-www-form-urlencoded' // 默认值
-        },
+      wx.cloud.database().collection('user').where({
+        phone: this.data.phone
+      }).get({
         success(res) {
-          if (res.data.code == "OK") {
-            var unitName = res.data.data.User.unitName;
-            var unitId = res.data.data.User.unitId;
-            wx.setStorageSync('unitId', unitId);
-            wx.setStorageSync('unitName', unitName);
-            wx.switchTab({
-              url: '../overviewData/realTimeData'
+          console.log('获取数据成功', res)
+          let user = res.data[0]
+          console.log('user', user)
+          if (that.data.password == user.password) {
+            wx.showToast({
+              title: '登录成功',
             })
+            // 跳转到个人中心页
+            wx.navigateTo({
+              url: '/pages/me/me',
+            })
+            // 保存用户的登录状态
+            wx.setStorageSync('isLogin', true)
+            wx.setStorageSync('phone', this.data.phone)
           } else {
             wx.showToast({
-              title: res.data.message,
-              icon: 'none',
-              duration: 2000
+              title: '手机号或密码错误',
+              icon: 'none'
             })
           }
+        },
+        fail(err) {
+          console.log('获取数据失败', err)
         }
       })
     }
   },
 
   // 注册
-  register(){
+  register() {
     // 跳转到注册界面
     wx.navigateTo({
-      url: '../register/register',
+      url: '../register/register'
     })
   }
+
 })
- 

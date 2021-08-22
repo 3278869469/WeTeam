@@ -1,5 +1,4 @@
 
-
 <!-- 如果不是登录状态，进入授权登录 -->
 <view wx:if="{{!isLogin}}">
     <view class='header'>
@@ -15,5 +14,6 @@
 </view>
 <!-- 授权登录后，进入手机登录 -->
 <view wx:else>
+    
     <button bindtap="loginOut">退出登录</button>
 </view>

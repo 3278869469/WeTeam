@@ -1,7 +1,6 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "登录",
+  "navigationBarTitleText": "个人中心",
   "navigationBarTextStyle": "white",
   "navigationBarBackgroundColor": "#1296db"
-
 }

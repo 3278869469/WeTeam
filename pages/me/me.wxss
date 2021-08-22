@@ -1,0 +1,164 @@
+/* pages/user/user.wxss */
+.avatar-wrapper {
+  background: #1296db;
+  padding: 25px 0;
+}
+
+.avatar-wrapper .avatar {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.avatar-wrapper .avatar image {
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-wrapper .text {
+  text-align: center;
+  color: #fff;
+}
+
+.listimg image {
+  margin-right: 5px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}
+
+.content {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/*分割线样式*/
+.divLine {
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+}
+
+.arrows image {
+  vertical-align: middle;
+  width: 15px;
+  height: 15px;
+  margin-left: 500rpx;
+}
+
+
+
+/* pages/mine/mine.wxss */
+
+.account-bg {
+  width: 100%;
+  height: 150rpx;
+}
+
+.userinfo-avatar {
+  width: 108rpx;
+  height: 108rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #fff;
+}
+
+/* 订单 */
+.order {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 90rpx;
+}
+
+.myorder-text {
+  font-size: 30rpx;
+  color: gray;
+  margin: 20rpx;
+  width: 40%;
+
+}
+
+.myorderlook-text {
+  font-size: 30rpx;
+  color: gray;
+  position: relative;
+  right: 20rpx;
+  width: 60%;
+  text-align: right;
+}
+
+.next-image {
+  width: 20rpx;
+  height: 25rpx;
+  position: relative;
+  right: 10rpx;
+}
+
+.navs {
+  display: flex;
+}
+
+.nav-item {
+  width: 33%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20rpx;
+}
+
+.nav-item .nav-image {
+  width: 60rpx;
+  height: 60rpx;
+  margin: 3rpx;
+}
+
+.nav-item text {
+  margin-top: 20rpx;
+  font-size: 25rpx;
+  color: gray;
+}
+
+/* 列表 */
+.person-list {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin: 30rpx;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 80rpx;
+}
+
+.item-image {
+  width: 40rpx;
+  height: 40rpx;
+  margin: 20rpx;
+}
+
+.item-text {
+  color: gray;
+  font-size: 30rpx;
+  margin-left: 20rpx;
+}
+
+.person-line {
+  width: 100%;
+  height: 2rpx;
+  background: lightgray;
+  margin-left: 90rpx;
+}
+
+.line {
+  background: #E0E3DA;
+  width: 100%;
+  height: 5rpx;
+}
