@@ -1,14 +1,49 @@
 <!--pages/personal/personal.wxml-->
-<text>pages/personal/personal.wxml</text>
+<!-- <text>pages/personal/personal.wxml</text> -->
 
 <!--反馈建议-->
-<view class='my_item'>
+<!-- <view class='my_item'>
         <button class="button" open-type="feedback">反馈建议</button>
         <view class='right_arrow' />
-    </view>
+    </view> -->
     <!--在线客服-->
-    <view class='my_item '>
+    <!-- <view class='my_item '>
         <button class="button" open-type="contact">在线客服</button>
         <view class='right_arrow' />
     </view>
-    <button bindtap="loginOut">退出登录</button>
+    <button bindtap="loginOut">退出登录</button> -->
+
+    <!--pages/myinfo/myinfo.wxml-->
+<!-- <text>pages/myinfo/myinfo.wxml</text> -->
+
+
+
+<view class='content'>
+    <view class="mine-wrapper">
+  <view class="avatar-wrapper">
+    <view>
+      <view class="avatar">
+        <image style="border-radius:50%;" src="/icons/头像1.jpeg"></image>
+      </view>
+      <view class="text">
+        <text>卑微小姚</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='item'>
+     <text class='left'>手机号：</text><text class='right'>{{myinfo.classname}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>性别：</text><text class='right'>{{myinfo.no}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>年龄：</text><text class='right'>{{myinfo.no}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>地区：</text><text class='right'>{{myinfo.name}}</text>
+    </view>
+    <view class='item'>
+      <text class='left'>学校：</text><text class='right'>{{myinfo.departmentname}}</text>
+    </view>
+</view>

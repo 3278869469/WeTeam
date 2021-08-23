@@ -23,6 +23,18 @@
           "pathName": "pages/me/me",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/empower/empower",
+          "pathName": "pages/empower/empower",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/personal/personal",
+          "pathName": "pages/personal/personal",
+          "query": "",
+          "scene": null
         }
       ]
     }
