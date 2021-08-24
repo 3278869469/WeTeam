@@ -51,17 +51,22 @@ Page({
           console.log('获取数据成功', res)
           let user = res.data[0]
           console.log('user', user)
-          if (that.data.password == user.password) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '账号不存在',
+              icon: 'none'
+            })
+          } else if (that.data.password == user.password) {
             wx.showToast({
               title: '登录成功',
             })
-            // 跳转到个人中心页
-            wx.navigateTo({
-              url: '/pages/me/me',
-            })
             // 保存用户的登录状态
             wx.setStorageSync('isLogin', true)
-            wx.setStorageSync('phone', this.data.phone)
+            wx.setStorageSync('phone', that.data.phone)
+            // 跳转到个人中心页
+            wx.switchTab({
+              url: '/pages/index/index'
+            })
           } else {
             wx.showToast({
               title: '手机号或密码错误',

@@ -1,4 +1,4 @@
-// pages/me/me.js
+// pages/more/more.js
 Page({
 
   /**
@@ -62,36 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  personal(){
-    wx.navigateTo({
-      url: '../personal/personal'
-    })
-  },
-
-  aboutWe(){
-    wx.navigateTo({
-      url: '../aboutWe/aboutWe'
-    })
-  },
-
-  more(){
-    wx.navigateTo({
-      url: '../more/more'
-    })
-  },
-
-  message(){
-    wx.navigateTo({
-      url: '../message/message'
-    })
-  },
-
-  teamHistory(){
-    wx.navigateTo({
-      url: '../teamHistory/teamHistory'
-    })
   }
-
 })

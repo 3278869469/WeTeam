@@ -1,54 +1,36 @@
-/* pages/personal/personal.wxss */
-
-.avatar-wrapper {
-  background: #1296db;
-  padding: 25px 0;
+.personView{
+  background-color: rgba(241, 237, 237, 0.685);
+  padding: 10px;
+  display:flex;
 }
 
-.avatar-wrapper .avatar {
-  margin: 0 auto;
-  text-align: center;
+.division{
+  background-color: white;
+  padding-top: 20px;
 }
 
-.avatar-wrapper .avatar image {
-  width: 100px;
-  height: 100px;
+.lableImg{
+  height: 80px;
+  width: 80px;
+  padding-left: 200px;
 }
 
-.avatar-wrapper .text {
-  text-align: center;
-  color: #fff;
+.label{
+  color: rgb(99, 97, 97);
+  padding-right: 20px;
+  display:flex;
+  align-items:center;
 }
 
-/* pages/myinfo/myinfo.wxss */
-.nav{
-  background-color: rgb(197, 196, 196);
+.myButton{
+    margin-top: 60px; 
+    border-radius:10px;
+    color: white;
+    background-color: #1296db;
+
 }
-.top{
-width: 250rpx;
-height: 250rpx;
-margin: 0 auto;
-}
-.nickname{
-margin-bottom: 10rpx;
-text-align: center;
-}
-.item{
-height: 70rpx;
-background-color: #fff;
-margin: 20rpx;
-display: flex;
-border-radius: 20rpx;
-}
-.left{
-display: flex;
-justify-content: flex-start;
-flex-grow: 1;
-}
-.right{
-display: flex;
-justify-content: flex-end;
-flex-grow: 1;
-color: #ccc;
-margin-right: 20rpx;
+/* 按钮点击改变颜色 */
+.myButton.button-hover {
+  color: white;
+  background-color: #1e89c1;
 }

@@ -1,0 +1,38 @@
+/* pages/aboutWe/aboutWe.wxss */
+
+.header {
+  margin: 90rpx 0 90rpx 50rpx;
+  /* border-bottom: 1px solid #ccc; */
+  text-align: center;
+  width: 650rpx;
+  height: 300rpx;
+  line-height: 450rpx;
+}
+
+.header image {
+  width: 380rpx;
+  height: 380rpx;
+}
+
+.content {
+  margin-left: 0rpx;
+  margin-bottom: 90rpx;
+}
+
+.content view{
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+.content text {
+  display: block;
+  color: #585858;
+  margin-top: 40rpx;
+  display: flex;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+

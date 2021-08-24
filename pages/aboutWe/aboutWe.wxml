@@ -1,0 +1,11 @@
+<!--pages/aboutWe/aboutWe.wxml-->
+
+<view>
+  <view class='header'>
+    <image src='/icons/logo.png'></image>
+  </view>
+  <view class='content'>
+    <view>WeTeam</view>
+    <text class="text">高校组队系统，在高校，学生经常会因为某种活动（如郊游、打球、参加竞赛等）而进行全校性的临时组队，为了便于学生进行组队活动，计划开发一款组队小程序。</text>
+  </view>
+</view>

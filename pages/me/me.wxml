@@ -6,8 +6,7 @@
         <image style="border-radius:50%;" src="/icons/头像1.jpeg"></image>
       </view>
       <view class="text">
-        <text wx:if="{{userinfo.nickName}}">{{userinfo.nickName}}</text>
-        <text wx:else bindtap="toLogin">注册 / 登录</text>
+        <text>nickName</text>
       </view>
     </view>
   </view>
@@ -15,43 +14,41 @@
 
 <!--pages/mine/mine.wxml-->
 <view class="container">
-<view class="separate"></view>
-<view class="order" catchtap="toOrder">
-  <text class="myorder-text"></text>
-  <text class="myorderlook-text">详细个人信息</text>
-  <image class="next-image" src="/icons/右.png"></image>
-</view>
-<view class="line"></view>
+  <view class="separate"></view>
+  <view class="order" catchtap="toOrder">
+    <text class="myorder-text"></text>
+    <text class="myorderlook-text" bindtap="personal">详细个人信息</text>
+    <image class="next-image" src="/icons/右.png"></image>
+  </view>
+  <view class="line"></view>
 
-<view class="navs">
-    <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+  <view class="navs">
+    <view class="nav-item" bindtap="message">
       <image src="/icons/消息中心.png" class="nav-image" />
       <text>消息中心</text>
     </view>
-    <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
+    <view class="nav-item" bindtap="teamHistory">
       <image src="/icons/组队历史.png" class="nav-image" />
       <text>组队历史</text>
     </view>
-    <view class="nav-item" catchtap="toOrder" data-type="{{item.name}}" data-typeid="{{item.typeId}}">
-      <image src="/icons/系统设置.png" class="nav-image" />
-      <text>系统设置</text>
+    <view class="nav-item" bindtap="more">
+      <image src="/icons/更多.png" class="nav-image" />
+      <text>更多选项</text>
     </view>
-</view>
-
-<view class="line"></view>
-
-<view class="person-list">
-  <view class="list-item">
-    <image class="item-image" src="/icons/关于我们.png"></image>
-    <text class="item-text">关于我们</text>
   </view>
-  <!-- <view class="person-line"></view> -->
-  <view class="list-item">
-    <image class="item-image" src="/icons/反馈意见.png"></image>
-    <text class="item-text">反馈意见</text>
-  </view>
-</view>
-<view class="separate"></view>
-</view>
 
-  
+  <view class="line"></view>
+
+  <view class="person-list">
+    <button class="list-item button" bindtap="aboutWe" style="width: 100%;">
+      <image class="item-image" src="/icons/关于我们.png"></image>
+      <text class="item-text">关于我们</text>
+    </button>
+    <!-- <view class="person-line"></view> -->
+    <button class="list-item button" open-type="feedback" style="width: 100%;">
+      <image class="item-image" src="/icons/反馈意见.png"></image>
+      <text class="item-text">反馈意见</text>
+    </button>
+  </view>
+  <view class="separate"></view>
+</view>

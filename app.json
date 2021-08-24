@@ -7,6 +7,10 @@
     "pages/me/me",
     "pages/added/added",
     "pages/team/team",
+    "pages/aboutWe/aboutWe",
+    "pages/more/more",
+    "pages/message/message",
+    "pages/teamHistory/teamHistory",
     "pages/personal/personal"
   ],
   "window": {

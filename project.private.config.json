@@ -35,6 +35,12 @@
           "pathName": "pages/personal/personal",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/aboutWe/aboutWe",
+          "pathName": "pages/aboutWe/aboutWe",
+          "query": "",
+          "scene": null
         }
       ]
     }

@@ -1,0 +1,9 @@
+<!--pages/more/more.wxml-->
+<view class='mine-provision'>
+  <button class="button" style="width: 100%;" open-type="contact">在线客服</button>
+  <image src="/icons/右.png"></image>
+</view>
+<view class='mine-provision'>
+  <button class="button" style="width: 100%;" bindtap="loginOut">退出登录</button>
+  <image src="/icons/右.png"></image>
+</view>
