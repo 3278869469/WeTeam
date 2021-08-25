@@ -12,3 +12,20 @@
         </swiper-item>  
       </block>  
     </swiper>  
+
+<view class="header">
+ <text>推荐队伍</text>
+ <text class="text-all">更多推荐</text>
+</view>
+
+<view class='content'>
+  <!-- wx:for循环使用该布局 -->
+    <view class='content-item' wx:for="{{contentitems}}">
+      <image src="../../icons/logo2宽.jpg"/>
+      <view class='content-item-text'>
+        <text>
+        优秀队伍
+        </text>
+      </view>
+    </view>
+  </view>

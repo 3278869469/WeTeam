@@ -7,3 +7,66 @@
     height: 100%;
     width: 100%;
   }
+
+  .header{
+    /* header是这个布局的整体，设置左边的绿色竖杠 */
+    border-left-width: 6px;
+    border-left-style: groove;
+    border-left-color: rgb(114, 166, 235);
+    /* 实现效果要用flex */
+    display: flex;
+    /* 主轴（横向）该参数使布局中的模块均匀分开 */
+    justify-content: space-between;
+    /* 竖轴，居中 */
+    align-content: center;
+    height: 55rpx;
+    /* 该布局中的元素距左右分别10rpx */
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    /* 该布局距上部10rpx */
+    margin-top: 10rpx;
+   
+  }
+  .text-all{
+    color: rgb(8, 27, 134);
+    font-size: 15px;
+  }
+
+  .content{
+    display: flex;
+    /* 横向排列，多出的自动换行；水平居中 */
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: center;
+   
+    }
+  .content-item{
+    /* 每个item的宽高，距周围的距离 */
+    height: 250rpx;
+    width: 45%;
+    margin: 5px;
+  /* 设定父布局的位置 */
+    position: relative;
+  }
+  .content-item image{
+    width: 100%;
+    height: 100%;
+  }
+  .content-item-text{
+    width: 98%;
+    height: 125rpx;
+    /* 设定文字的绝对位置，首先要设定父布局的位置 */
+    position: absolute;
+    bottom: 0px;
+    color: #fff;
+    font-size: 10px;
+    /* 设置文字的渐变背景色 */
+    background: -webkit-linear-gradient(bottom,rgba(0,0,0,0.8),rgba(0,0,0,0));
+    display: flex;
+    /* 文字在最下边，所以垂直布局，显示在下边 */
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    padding-right:  1%;
+  }
