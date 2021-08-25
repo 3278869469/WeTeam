@@ -11,7 +11,9 @@
     "pages/more/more",
     "pages/message/message",
     "pages/teamHistory/teamHistory",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "pages/createTeam/createTeam"
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -34,18 +36,17 @@
       },
       {
         "pagePath": "pages/team/team",
-
         "text": "加入队伍",
         "iconPath": "icons/加入队伍.png",
         "selectedIconPath": "icons/加入队伍-选中.png"
       },
       {
-        "pagePath": "pages/team/team",
+        "pagePath": "pages/createTeam/createTeam",
         "iconPath": "icons/创建队伍.png",
         "selectedIconPath": "icons/创建队伍.png"
       },
       {
-        "pagePath": "pages/team/team",
+        "pagePath": "pages/added/added",
         "text": "已加入队伍",
         "iconPath": "icons/已加入队伍.png",
         "selectedIconPath": "icons/已加入队伍-选中.png"

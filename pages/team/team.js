@@ -5,14 +5,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    phone: '',
+    isLogin: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let phone = wx.getStorageSync('phone')
+    let isLogin = wx.getStorageSync('isLogin')
+    this.setData({
+      phone: phone,
+      isLogin: isLogin
+    })
+    if(!this.data.isLogin){
+      wx.reLaunch({
+        url: '../login/login'
+      })
+    }
   },
 
   /**
