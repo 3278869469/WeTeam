@@ -19,32 +19,39 @@
     <view class="division"></view>
     <view class="personView">
         <label class="label">昵称</label>
-        <input></input>
+        <input bindinput="nicknameInput" disabled="{{!edit}}"></input>
     </view>
     <view class="personView">
         <label class="label">性别</label>
-        <input></input>
+        <input bindinput="sexInput" disabled="{{!edit}}"></input>
     </view>
     <view class="personView">
         <label class="label">年龄</label>
-        <input></input>
+        <input bindinput="ageInput" disabled="{{!edit}}"></input>
     </view>
     <view class="personView">
         <label class="label">地区</label>
-        <input></input>
+        <input bindinput="addressInput" disabled="{{!edit}}"></input>
     </view>
     <view class="division"></view>
     <view class="personView">
         <label class="label">手机号</label>
-        <input></input>
+        <input wx:if="{{!edit}}" bindinput="phoneInput" disabled="false" value="{{phone}}"></input>
+        <input wx:else class="phoneInput" bindinput="phoneInput" disabled="false" value="{{phone}}"></input>
     </view>
     <view class="personView">
         <label class="label">学校</label>
-        <input></input>
+        <input bindinput="classInput" disabled="{{!edit}}"></input>
     </view>
     <view class="personView">
         <label class="label">邮箱</label>
-        <input></input>
+        <input bindinput="mailInput" disabled="{{!edit}}"></input>
     </view>
-    <button class="myButton" style="width: 90%;">编辑资料</button>
+    <!-- 是编辑资料，用不同的按钮格式 -->
+    <view wx:if="{{edit}}">
+        <button class="myButton" style="width: 90%;" bindtap="edit">保存</button>
+    </view>
+    <view wx:else>
+    <button class="editBut" style="width: 90%;" bindtap="edit">编辑资料</button>
+    </view>
 </view>

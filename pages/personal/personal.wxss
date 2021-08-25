@@ -1,36 +1,52 @@
-.personView{
+.personView {
   background-color: rgba(241, 237, 237, 0.685);
   padding: 10px;
-  display:flex;
+  display: flex;
 }
 
-.division{
+.division {
   background-color: white;
   padding-top: 20px;
 }
 
-.lableImg{
+.lableImg {
   height: 80px;
   width: 80px;
   padding-left: 200px;
 }
 
-.label{
+.label {
   color: rgb(99, 97, 97);
   padding-right: 20px;
-  display:flex;
-  align-items:center;
+  display: flex;
+  align-items: center;
 }
 
-.myButton{
-    margin-top: 60px; 
-    border-radius:10px;
-    color: white;
-    background-color: #1296db;
+.myButton {
+  margin-top: 60px;
+  border-radius: 10px;
+  color: white;
+  background-color: #1296db;
 
 }
+
 /* 按钮点击改变颜色 */
 .myButton.button-hover {
   color: white;
   background-color: #1e89c1;
+}
+
+.editBut {
+  margin-top: 60px;
+  border-radius: 10px;
+  color: rgb(88, 88, 88);
+  background-color: #e6e3e3;
+}
+.editBut.button-hover {
+  color: rgb(88, 88, 88);
+  background-color: #cecbcb;
+}
+
+.phoneInput{
+  color: rgb(99, 97, 97);
 }
