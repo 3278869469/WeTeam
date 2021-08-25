@@ -1,3 +1,14 @@
-<view>首页
-  <text class="iconfont icon-index-copy"></text>
+<view>
+  <!--搜索框 开始-->
+  <SearchInput></SearchInput>
+  <!--搜索框 结束-->
 </view>
+
+<!--index.wxml-->  
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
+      <block wx:for="{{movies}}" wx:for-index="index">  
+        <swiper-item>  
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>  
+        </swiper-item>  
+      </block>  
+    </swiper>  
