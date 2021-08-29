@@ -6,7 +6,8 @@ Page({
    */
   data: {
     phone: '',
-    isLogin: false
+    isLogin: false,
+    nickname: ''
   },
 
   /**
@@ -19,7 +20,8 @@ Page({
       phone: phone,
       isLogin: isLogin
     })
-    if(!this.data.isLogin){
+    this.getdata()
+    if (!this.data.isLogin) {
       wx.reLaunch({
         url: '../login/login'
       })
@@ -75,31 +77,48 @@ Page({
 
   },
 
-  personal(){
+  getdata() {
+    wx.cloud.database().collection("user").where({
+        phone: this.data.phone
+      })
+      .get()
+      .then(res => {
+        let temp = res.data[0]
+        console.log(res)
+        this.setData({
+          nickname: temp.nickname
+        })
+      })
+      .catch(err => {
+
+      })
+  },
+
+  personal() {
     wx.navigateTo({
       url: '../personal/personal'
     })
   },
 
-  aboutWe(){
+  aboutWe() {
     wx.navigateTo({
       url: '../aboutWe/aboutWe'
     })
   },
 
-  more(){
+  more() {
     wx.navigateTo({
       url: '../more/more'
     })
   },
 
-  message(){
+  message() {
     wx.navigateTo({
       url: '../message/message'
     })
   },
 
-  teamHistory(){
+  teamHistory() {
     wx.navigateTo({
       url: '../teamHistory/teamHistory'
     })

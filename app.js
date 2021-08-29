@@ -1,8 +1,6 @@
 App({
 
   data: {
-    isLogin: false,
-    phone: ""
   },
 
   /**

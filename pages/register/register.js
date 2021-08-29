@@ -88,7 +88,9 @@ Page({
   register: function () {
     let that = this
     let str = /^1\d{10}$/
+    let pass = /^[a-zA-Z]\w{5,17}$/
     // 是否为空效验
+    console.log(this.data.phone)
     if (this.data.phone.length == 0) {
       wx.showToast({
         title: '手机号不能为空',
@@ -110,11 +112,22 @@ Page({
         title: '手机号不正确',
         icon: 'none'
       })
+    } else if (!pass.test(this.data.password)) {
+      wx.showToast({
+        title: '密码必须以字母开头，长度在6~18之间，只能包含字母、数字和下划线',
+        icon: "none"
+      })
     } else {
       wx.cloud.database().collection('user').add({
         data: {
           phone: this.data.phone,
-          password: this.data.password
+          password: this.data.password,
+          nickname: "",
+          sex: "",
+          age: "",
+          address: "",
+          shool: "",
+          mail: ""
         },
         success(res) {
           wx.showToast({

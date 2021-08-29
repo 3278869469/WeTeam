@@ -1,37 +1,24 @@
-<!--pages/personal/personal.wxml-->
-<!-- <text>pages/personal/personal.wxml</text> -->
-
-<!--反馈建议-->
-<!-- <view class='my_item'>
-        <button class="button" open-type="feedback">反馈建议</button>
-        <view class='right_arrow' />
-    </view> -->
-<!--在线客服-->
-
-
-<!--pages/myinfo/myinfo.wxml-->
-<!-- <text>pages/myinfo/myinfo.wxml</text> -->
-
 <view>
     <view class="personView">
-        <label class="label">头像</label> <image class="lableImg" src="/icons/头像1.jpeg"></image>
+        <label class="label">头像</label>
+        <image class="lableImg" src="/icons/头像1.jpeg"></image>
     </view>
     <view class="division"></view>
     <view class="personView">
         <label class="label">昵称</label>
-        <input bindinput="nicknameInput" disabled="{{!edit}}"></input>
+        <input bindinput="nicknameInput" disabled="{{!edit}}" value="{{nickname}}"></input>
     </view>
     <view class="personView">
         <label class="label">性别</label>
-        <input bindinput="sexInput" disabled="{{!edit}}"></input>
+        <input bindinput="sexInput" disabled="{{!edit}}" value="{{sex}}"></input>
     </view>
     <view class="personView">
         <label class="label">年龄</label>
-        <input bindinput="ageInput" disabled="{{!edit}}"></input>
+        <input bindinput="ageInput" disabled="{{!edit}}" value="{{age}}"></input>
     </view>
     <view class="personView">
         <label class="label">地区</label>
-        <input bindinput="addressInput" disabled="{{!edit}}"></input>
+        <input bindinput="addressInput" disabled="{{!edit}}" value="{{address}}"></input>
     </view>
     <view class="division"></view>
     <view class="personView">
@@ -41,17 +28,17 @@
     </view>
     <view class="personView">
         <label class="label">学校</label>
-        <input bindinput="classInput" disabled="{{!edit}}"></input>
+        <input bindinput="shoolInput" disabled="{{!edit}}" value="{{shool}}"></input>
     </view>
     <view class="personView">
         <label class="label">邮箱</label>
-        <input bindinput="mailInput" disabled="{{!edit}}"></input>
+        <input bindinput="mailInput" disabled="{{!edit}}" value="{{mail}}"></input>
     </view>
     <!-- 是编辑资料，用不同的按钮格式 -->
     <view wx:if="{{edit}}">
         <button class="myButton" style="width: 90%;" bindtap="edit">保存</button>
     </view>
     <view wx:else>
-    <button class="editBut" style="width: 90%;" bindtap="edit">编辑资料</button>
+        <button class="editBut" style="width: 90%;" bindtap="edit">编辑资料</button>
     </view>
 </view>

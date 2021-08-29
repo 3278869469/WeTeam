@@ -7,7 +7,7 @@
         <view class="inputView">
             <image class="nameImage" src="/icons/账号.png"></image>
             <label class="loginLab">手机号</label>
-            <input class="inputText" placeholder="请输入手机号" bindinput="usernameInput" />
+            <input class="inputText" placeholder="请输入手机号" bindinput="phoneInput" />
         </view>
         <view class="line"></view>
         <!--密码-->

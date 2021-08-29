@@ -6,10 +6,11 @@ Page({
    */
   data: {
     edit: false,
+    id: '',
     nickname: '',
     sex: '',
     age: '',
-    adress: '',
+    address: '',
     phone: '',
     shool: '',
     mail: '',
@@ -24,9 +25,7 @@ Page({
       edit: false,
       phone: phone
     })
-    // wx.cloud.database().collection('user').where({
-    //   phone = this.data.phone
-    // })
+    this.getData()
   },
 
   /**
@@ -82,15 +81,33 @@ Page({
   edit() {
     // 编辑资料状态
     if (this.data.edit) {
-      this.setData({
-        edit: false,
-      })
+      if (this.data.nickname == '') {
+        wx.showToast({
+          title: '昵称不能为空',
+          icon: 'none'
+        })
+      } else if (this.data.address == '') {
+        wx.showToast({
+          title: '地址不能为空',
+          icon: 'none'
+        })
+      } else if (this.data.shool == '') {
+        wx.showToast({
+          title: '学校不能为空',
+          icon: 'none'
+        })
+      } else {
+        console.log(this.data.id)
+        this.editData()
+      }
     }
     // 查看资料状态
     else {
+      this.getData()
       this.setData({
         edit: true,
       })
+
     }
   },
 
@@ -116,9 +133,9 @@ Page({
   },
 
   // 获取地址
-  adressInput: function (e) {
+  addressInput: function (e) {
     this.setData({
-      adress: e.detail.value
+      address: e.detail.value
     })
   },
 
@@ -135,6 +152,65 @@ Page({
       mail: e.detail.value
     })
   },
+
+  getData() {
+    // 云函数入口
+    wx.cloud.callFunction({
+        name: 'getUserData',
+        data: {
+          phone: this.data.phone
+        }
+      })
+      .then(res => {
+        console.log('数据库检索成功', res) //打印返回结果
+        let temp = res.result.data[0]
+        // console.log(temp)
+        this.setData({
+          id: temp._id,
+          nickname: temp.nickname,
+          sex: temp.sex,
+          age: temp.age,
+          address: temp.address,
+          shool: temp.shool,
+          mail: temp.mail
+        })
+      }).catch(err => {
+        console.log('数据库检索错误', err) //打印错误信息
+      })
+  },
+
+  editData() {
+    // 云函数调用
+    wx.cloud.callFunction({
+        name: 'upUserData',
+        data: {
+          id: this.data.id,
+          nickname: this.data.nickname,
+          sex: this.data.sex,
+          age: this.data.age,
+          address: this.data.address,
+          shool: this.data.shool,
+          mail: this.data.mail
+        }
+      })
+      .then(res => {
+        wx.showToast({
+          title: '修改成功'
+        })
+        this.setData({
+          edit: false,
+        })
+      })
+      .catch(err => {
+        console.log(err)
+        wx.showToast({
+          title: '修改失败',
+          icon: 'none'
+        })
+      })
+  },
+
+
 
 
 })
