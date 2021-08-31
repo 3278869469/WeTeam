@@ -13,7 +13,8 @@ exports.main = async (event, context) => {
         age: event.age,
         address: event.address,
         shool: event.shool,
-        mail: event.mail
+        mail: event.mail,
+        headportrait: event.headportrait
       }
     })
 }

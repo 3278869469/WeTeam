@@ -90,7 +90,6 @@ Page({
     let str = /^1\d{10}$/
     let pass = /^[a-zA-Z]\w{5,17}$/
     // 是否为空效验
-    console.log(this.data.phone)
     if (this.data.phone.length == 0) {
       wx.showToast({
         title: '手机号不能为空',
@@ -117,32 +116,56 @@ Page({
         title: '密码必须以字母开头，长度在6~18之间，只能包含字母、数字和下划线',
         icon: "none"
       })
-    } else {
-      wx.cloud.database().collection('user').add({
-        data: {
-          phone: this.data.phone,
-          password: this.data.password,
-          nickname: "",
-          sex: "",
-          age: "",
-          address: "",
-          shool: "",
-          mail: ""
-        },
-        success(res) {
-          wx.showToast({
-            title: '注册成功',
-          })
-          wx.navigateTo({
-            url: '/pages/login/login',
-          })
-        },
-        fail(err) {
-          wx.showToast({
-            title: '注册失败',
-          })
-        }
+    } else if (this.data.repassword != this.data.password) {
+      wx.showToast({
+        title: '密码不一致',
+        icon: "none"
       })
+    } else {
+      wx.cloud.database().collection('user').where({
+          phone: this.data.phone
+        })
+        .get()
+        .then(res => {
+          if (res.data.length == 0) {
+            //通过判断data数组长度是否为0来进行下一步的逻辑处理
+            wx.cloud.database().collection('user').add({
+              data: {
+                phone: this.data.phone,
+                password: this.data.password,
+                nickname: "",
+                sex: "",
+                age: "",
+                address: "",
+                shool: "",
+                mail: "",
+                headportrait: "",
+              },
+              success(res) {
+                wx.showToast({
+                  title: '注册成功',
+                })
+                wx.navigateTo({
+                  url: '/pages/login/login',
+                })
+              },
+              fail(err) {
+                wx.showToast({
+                  title: '注册失败',
+                })
+              }
+            })
+          } else {
+            wx.showToast({
+              title: '账号已存在',
+              icon: 'none'
+            })
+          }
+        })
+        .catch(err => {
+          console.log("获取错误", err)
+        })
+
     }
   },
 })

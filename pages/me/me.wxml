@@ -4,7 +4,7 @@
   <view class="avatar-wrapper">
     <view>
       <view class="avatar">
-        <image style="border-radius:50%;" src="/icons/头像1.jpeg"></image>
+        <image style="border-radius:50%;" src="{{headportrait}}"></image>
       </view>
       <view class="text">
       <text>{{nickname}}</text>

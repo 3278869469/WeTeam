@@ -1,8 +1,20 @@
 <view>
-    <view class="personView">
-        <label class="label">头像</label>
-        <image class="lableImg" src="/icons/头像1.jpeg"></image>
+    <!-- 头像区域 -->
+    <!-- 是否编辑资料，头像是否可换 -->
+    <view wx:if="{{edit}}">
+        <view class="personView" bindtap="headimage">
+            <label class="label">头像</label>
+            <image class="lableImg" src="{{headportrait}}"></image>
+        </view>
     </view>
+    <view wx:else>
+        <view class="personView">
+            <label class="label">头像</label>
+            <image class="lableImg" src="{{headportrait}}"></image>
+        </view>
+    </view>
+
+    <!-- 个人基本信息区域 -->
     <view class="division"></view>
     <view class="personView">
         <label class="label">昵称</label>
@@ -34,6 +46,8 @@
         <label class="label">邮箱</label>
         <input bindinput="mailInput" disabled="{{!edit}}" value="{{mail}}"></input>
     </view>
+
+    <!-- 按钮区域 -->
     <!-- 是编辑资料，用不同的按钮格式 -->
     <view wx:if="{{edit}}">
         <button class="myButton" style="width: 90%;" bindtap="edit">保存</button>

@@ -7,7 +7,8 @@ Page({
   data: {
     phone: '',
     isLogin: false,
-    nickname: ''
+    nickname: '',
+    headportrait: '/icons/logo.PNG',
   },
 
   /**
@@ -39,7 +40,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getdata()
   },
 
   /**
@@ -86,7 +87,8 @@ Page({
         let temp = res.data[0]
         console.log(res)
         this.setData({
-          nickname: temp.nickname
+          nickname: temp.nickname,
+          headportrait: temp.headportrait,
         })
       })
       .catch(err => {

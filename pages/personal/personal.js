@@ -14,6 +14,7 @@ Page({
     phone: '',
     shool: '',
     mail: '',
+    headportrait: '/icons/logo.PNG',
   },
 
   /**
@@ -172,7 +173,8 @@ Page({
           age: temp.age,
           address: temp.address,
           shool: temp.shool,
-          mail: temp.mail
+          mail: temp.mail,
+          headportrait: temp.headportrait
         })
       }).catch(err => {
         console.log('数据库检索错误', err) //打印错误信息
@@ -190,7 +192,8 @@ Page({
           age: this.data.age,
           address: this.data.address,
           shool: this.data.shool,
-          mail: this.data.mail
+          mail: this.data.mail,
+          headportrait:this.data.headportrait,
         }
       })
       .then(res => {
@@ -210,7 +213,23 @@ Page({
       })
   },
 
-
+  // 点击更换手机相册或者电脑本地图片   
+  headimage: function () {
+    var _this = this;
+    wx.chooseImage({
+      count: 1, // 默认9     
+      sizeType: ['original', 'compressed'],
+      // 指定是原图还是压缩图，默认两个都有     
+      sourceType: ['album', 'camera'],
+      // 指定来源是相册还是相机，默认两个都有   
+      success: function (res) {
+        console.log('图片上成功',res)
+        _this.setData({
+          headportrait: res.tempFilePaths
+        })
+      }
+    })
+  },
 
 
 })
