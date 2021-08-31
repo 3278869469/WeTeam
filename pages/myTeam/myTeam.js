@@ -1,4 +1,4 @@
-// pages/more/more.js
+// pages/myTeam/myTeam.js
 Page({
 
   /**
@@ -62,33 +62,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  // 退出登录
-  loginOut() {
-    wx.showModal({
-      title: '退出',
-      content: '是否确认退出登录',
-      success: function (res) {
-        if (res.confirm) { //这里是点击了确定以后
-          // 删掉缓存
-          wx.setStorageSync('phone', null)
-          wx.setStorageSync('isLogin', false)
-          wx.reLaunch({
-            url: '../login/login'
-          })
-        } else { //这里是点击了取消以后
-          console.log('用户点击取消')
-        }
-      }
-    })
-  },
-
-  teamHistory(){
-    wx.navigateTo({
-      url: '../teamHistory/teamHistory'
-    })
   }
-
-
 })

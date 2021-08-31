@@ -1,5 +1,4 @@
 {
-  
   "setting": {},
   "condition": {
     "plugin": {
@@ -40,6 +39,12 @@
         {
           "name": "pages/aboutWe/aboutWe",
           "pathName": "pages/aboutWe/aboutWe",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/createTeam/createTeam",
+          "pathName": "pages/createTeam/createTeam",
           "query": "",
           "scene": null
         }

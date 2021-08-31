@@ -12,7 +12,8 @@
     "pages/message/message",
     "pages/teamHistory/teamHistory",
     "pages/personal/personal",
-    "pages/createTeam/createTeam"
+    "pages/createTeam/createTeam",
+    "pages/myTeam/myTeam"
 
   ],
   "window": {

@@ -30,7 +30,7 @@
     </view>
     <view class="nav-item" bindtap="teamHistory">
       <image src="/icons/组队历史.png" class="nav-image" />
-      <text>组队历史</text>
+      <text>我的队伍</text>
     </view>
     <view class="nav-item" bindtap="more">
       <image src="/icons/更多.png" class="nav-image" />

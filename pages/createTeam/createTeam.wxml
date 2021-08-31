@@ -1,2 +1,19 @@
 <!--pages/createTeam/createTeam.wxml-->
-<text>pages/createTeam/createTeam.wxml</text>
+
+<veiw>
+  <label>队伍标题</label>
+  <input style="background-color: rgba(247, 253, 154, 0.74);"></input>
+  <image src="/icons/加.png"></image>
+  <label>队伍详情</label>
+  <textarea style="background-color: cadetblue;"></textarea>
+  <label>队伍人数</label>
+  <input style="background-color:navajowhite"></input>
+  <label>活动开始时间</label>
+  <input style="background-color:navajowhite"></input>
+  <label>活动地区</label>
+  <input style="background-color:navajowhite"></input>
+  <label>活动地区</label>
+  <input style="background-color:navajowhite"></input>
+  <label>活动分区</label>
+  <input style="background-color:navajowhite"></input>
+</veiw>

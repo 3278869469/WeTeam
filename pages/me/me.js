@@ -122,7 +122,7 @@ Page({
 
   teamHistory() {
     wx.navigateTo({
-      url: '../teamHistory/teamHistory'
+      url: '../myTeam/myTeam'
     })
   }
 
