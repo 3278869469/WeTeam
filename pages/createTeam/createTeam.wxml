@@ -1,64 +1,78 @@
-<!--pages/102/102.wxml-->
-
-<!--切换查看一周时间-->
-<view id="t2">
-<text bindtap="goto_yuyueyizhou" style="font:PingFang SC;font-weight:Regular;color:#333333CC;font-size:8pt;position:relative;top:-10rpx;left:3%">切换查看一周时间</text>
-<view class="t3"><image style="width:100%; height:100%; border-radius: 25rpx;" mode="aspectFill" src="{{img6}}"></image></view>
-</view>
-<!--请选择时间段及提示-->
-<text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:10pt;position:relative;top:5rpx;left:48rpx">队伍名称:</text>
-
-<!--时间段-->
-
-<view>
-<input style="position: relative; top: 10rpx; left: 48rpx" placeholder="请填写队伍名称" placeholder-class="texts" placeholder-style="color:#33333366;"  maxlength="20" auto-focus="true"  type="text" bindinput="bindbegin"></input>
-<view class="a1" style="position: relative; left: 46rpx; top: 20rpx"></view>
-</view>
-<text style="font: PingFang SC; font-weight: Bold; color: #333333CC; font-size: 10pt; position: relative; top:30rpx; left: 48rpx;">队伍人数：</text>
-<view>
-<input style="position: relative; top: 40rpx; left: 48rpx" placeholder="请填写队伍人数" placeholder-class="texts" placeholder-style="color:#33333366;"  maxlength="20" auto-focus="true"  type="text" bindinput="bindend"></input>
-<view class="a1" style="position: relative; left: 46rpx; top: 50rpx"></view>
-</view>
-<!--会议室-->
-<text style="font: PingFang SC; font-weight: Bold; color: #333333CC; font-size: 10pt; position: relative; top: 402rpx; left: 48rpx; width: 346rpx; height: 48rpx; display: block; box-sizing: border-box">开始时间</text>
-<view>
-<input style="position: relative; top: 392rpx; left: 46rpx" placeholder="（出现日历，选择时间）" placeholder-class="texts" placeholder-style="color:#33333366;"  maxlength="20" auto-focus="true"  type="text"  bindinput="bindmeetnum"></input>
-<view class="a1" style="position: relative; left: 46rpx; top: 393rpx"></view>
-</view>
-<text style="font: PingFang SC; font-weight: Bold; color: #333333CC; font-size: 10pt; position: relative; top: 434rpx; left: 48rpx; width: 346rpx; height: 40rpx; display: block; box-sizing: border-box">活动地区</text>
-<view>
-<input style="position: relative; top: 437rpx; left: 48rpx" placeholder="活动地区"
-          placeholder-class="texts"
-          placeholder-style="color:#33333366;"
-          maxlength="20"
-          auto-focus="true"
-          type="text"
-          bindinput="bindmeetifo"></input>
-<view class="a2" style="position: relative; left: 38rpx; top: 440rpx"></view>
-</view>
-<text style="font: PingFang SC; font-weight: Bold; color: #333333CC; font-size: 10pt; position: relative; top: 471rpx; left: 48rpx">活动高校</text>
-<view>
-<input style="position: relative; top: 480rpx; left: 48rpx" placeholder="活动高校"
-          placeholder-class="texts"
-          placeholder-style="color:#33333366;"
-          maxlength="20"
-          auto-focus="true"
-          type="text"
-          bindinput="bindmeettheme"></input>
-<view class="a3" style="position: relative; left: 44rpx; top: 481rpx"></view>
-</view>
-<text style="font: PingFang SC; font-weight: Bold; color: #333333CC; font-size: 10pt; position: relative; top: -167rpx; left: 51rpx">队伍详情介绍</text>
-<view id="box1" style="position: relative; left: 48rpx; top: -137rpx"><image style="width:80%; height:80%;position:absolute;top:18rpx;left:10%" mode="widthFix" src="{{img2}}"></image></view>
-<text style="font: PingFang SC; font-weight: Bold; color: #478EF2FF; font-size: 8pt; position: relative; top: -110rpx; left: 61rpx">队伍图片</text>
-
-<!--取消-->
-<view class="c1">
-  <button bindtap="goto_yicenghuiyishi" class='bottom_btn1'>
-        取消
-    </button>
-<!--确定和弹出框-->
-<view class="c3">
-  <button bindtap="popup" class='bottom_btn2' style="position: relative; left: -8rpx; top: -30rpx">确定</button>
-</view>
+<!--队伍名称-->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC; font-weight:Bold;color:#1296db; font-size:13pt; padding-left: 48rpx;">队伍名称:</text>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" placeholder="请填写队伍名称" placeholder-class="texts"
+      placeholder-style="color:#33333366;" maxlength="50" auto-focus="true" type="text"></input>
+    <view class="a1"></view>
+  </view>
 </view>
 
+<!-- 活动分区 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">活动分区:</text>
+</view>
+
+<!-- 队伍图片 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">队伍图片:</text>
+  <view style="padding-left: 40rpx; padding-top: 5px;">
+    <image style="width:50%; height:50%;" mode="widthFix" src="/icons/logo2.jpg"></image>
+  </view>
+</view>
+
+<!-- 队伍详细内容 -->
+<view style="padding-top: 10px; padding-left: 40rpx; padding-right: 40rpx;">
+  <textarea style=" padding-top: 10rpx; padding-left:8rpx; background-color: #ecebeba4; width: auto;"
+    placeholder="队伍详细介绍" placeholder-class="texts" placeholder-style="color:#33333366;" auto-focus="true"
+    type="text"></textarea>
+</view>
+
+<!-- 队伍人数 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">队伍人数:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 活动高校 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动高校:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 活动地区 -->
+<view style="padding-top: 10px;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动地区:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 活动开始时间 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动开始时间:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 按钮 -->
+<view style="padding-top: 15px; padding-bottom: 50px;">
+<button style="width: 95%" class="btn">发布组队</button>
+</view>
