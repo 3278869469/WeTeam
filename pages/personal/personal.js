@@ -14,7 +14,7 @@ Page({
     phone: '',
     shool: '',
     mail: '',
-    headportrait: '/icons/logo.PNG',
+    headportrait: '',
   },
 
   /**
@@ -230,6 +230,5 @@ Page({
       }
     })
   },
-
 
 })

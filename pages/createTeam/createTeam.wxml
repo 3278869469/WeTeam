@@ -3,7 +3,7 @@
   <text style="font:PingFang SC; font-weight:Bold;color:#1296db; font-size:13pt; padding-left: 48rpx;">队伍名称:</text>
   <view style="padding-left: 40rpx; ">
     <input style=" padding-top: 10rpx; padding-left: 8rpx" placeholder="请填写队伍名称" placeholder-class="texts"
-      placeholder-style="color:#33333366;" maxlength="50" auto-focus="true" type="text"></input>
+      placeholder-style="color:#33333366;" maxlength="50" auto-focus="true" type="text" bindinput="teamTileInput"></input>
     <view class="a1"></view>
   </view>
 </view>
@@ -11,13 +11,19 @@
 <!-- 活动分区 -->
 <view style="padding-top: 10px;">
   <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">活动分区:</text>
+  <picker mode="selector" range="{{array}}" bindchange="selectActive">
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" placeholder="请选择分区" value="{{array[active]}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+  </picker>
 </view>
 
 <!-- 队伍图片 -->
 <view style="padding-top: 10px;">
   <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">队伍图片:</text>
   <view style="padding-left: 40rpx; padding-top: 5px;">
-    <image style="width:50%; height:50%;" mode="widthFix" src="/icons/logo2.jpg"></image>
+    <image style="width:80%; height:80%;" mode="widthFix" src="{{teamLogo}}" bindtap="teamLogoImg"></image>
   </view>
 </view>
 
@@ -25,7 +31,7 @@
 <view style="padding-top: 10px; padding-left: 40rpx; padding-right: 40rpx;">
   <textarea style=" padding-top: 10rpx; padding-left:8rpx; background-color: #ecebeba4; width: auto;"
     placeholder="队伍详细介绍" placeholder-class="texts" placeholder-style="color:#33333366;" auto-focus="true"
-    type="text"></textarea>
+    type="text" bindinput="teamDetailInput" value="{{teamDetail}}"></textarea>
 </view>
 
 <!-- 队伍人数 -->
@@ -34,7 +40,7 @@
     <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">队伍人数:</text>
   </view>
   <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number"></input>
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number" bindinput="teamNumInput" value="{{teamNum}}"></input>
     <view class="a1"></view>
   </view>
 </view>
@@ -45,7 +51,7 @@
     <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动高校:</text>
   </view>
   <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text"></input>
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text" bindinput="shoolInput" value="{{shool}}"></input>
     <view class="a1"></view>
   </view>
 </view>
@@ -55,24 +61,46 @@
   <view>
     <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动地区:</text>
   </view>
+  <picker mode="region" bindchange="selectArea">
   <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number"></input>
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="" placeholder="请选择地区" value="{{area}}" disabled="true"></input>
     <view class="a1"></view>
   </view>
+</picker>
 </view>
 
 <!-- 活动开始时间 -->
 <view style="padding-top: 10px;  justify-content:flex-start;">
   <view>
-    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动开始时间:</text>
+    <text
+      style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动开始时间:</text>
   </view>
-  <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text"></input>
-    <view class="a1"></view>
-  </view>
+  <picker mode="date" bindchange="selectStartTime">
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type=""
+        placeholder="请选择日期" value="{{startTime}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+  </picker>
 </view>
 
-<!-- 按钮 -->
+<!-- 活动结束时间 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text
+      style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动结束时间:</text>
+  </view>
+  <picker mode="date" bindchange="selectEndTime">
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type=""
+        placeholder="请选择日期" value="{{endTime}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+  </picker>
+</view>
+
+
+<!-- 发布按钮 -->
 <view style="padding-top: 15px; padding-bottom: 50px;">
-<button style="width: 95%" class="btn">发布组队</button>
+  <button style="width: 95%" class="btn" bindtap="submit">发布组队</button>
 </view>
