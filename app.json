@@ -14,7 +14,6 @@
     "pages/personal/personal",
     "pages/createTeam/createTeam",
     "pages/myTeam/myTeam"
-
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -22,14 +21,14 @@
     "navigationBarTitleText": "WeTeam",
     "navigationBarTextStyle": "black"
   },
-
   "tabBar": {
     "color": "#707070",
     "selectedColor": "#1296db",
     "backgroundColor": "",
     "position": "bottom",
     "borderStyle": "black",
-    "list": [{
+    "list": [
+      {
         "pagePath": "pages/index/index",
         "text": "首页",
         "iconPath": "icons/首页.png",
@@ -51,12 +50,12 @@
         "text": "已加入队伍",
         "iconPath": "icons/已加入队伍.png",
         "selectedIconPath": "icons/已加入队伍-选中.png"
-      }, {
+      },
+      {
         "pagePath": "pages/me/me",
         "text": "个人中心",
         "iconPath": "icons/个人中心.png",
         "selectedIconPath": "icons/个人中心-选中.png"
-
       }
     ]
   },

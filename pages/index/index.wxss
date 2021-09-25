@@ -1,8 +1,26 @@
 /**index.wxss**/
-.swiper {
+/*.swiper {
     height: 400rpx;
     width: 100%;
-  }
+  }*/
+  .inputText { 
+    border-left-width: 6px;
+    border-left-style: groove;
+    border-left-color: rgb(114, 166, 235);
+    /* 实现效果要用flex */
+    display: flex;
+    /* 主轴（横向）该参数使布局中的模块均匀分开 */
+    justify-content: space-between;
+    /* 竖轴，居中 */
+    align-content: center;
+    height: 55rpx;
+    /* 该布局中的元素距左右分别10rpx */
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    /* 该布局距上部10rpx */
+    margin-top: 10rpx;
+   
+   } 
   .swiper image {
     height: 100%;
     width: 100%;

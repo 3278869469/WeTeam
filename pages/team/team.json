@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "table team",
+  "usingComponents": {
+    "mytable":"../../components/table/table"
+  }
 }

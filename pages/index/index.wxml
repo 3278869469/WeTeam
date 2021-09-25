@@ -1,6 +1,6 @@
 <view>
   <!--搜索框 开始-->
-  <SearchInput></SearchInput>
+  <input class="inputText" placeholder="搜索想要的队伍" bindinput="searchInput" />
   <!--搜索框 结束-->
 </view>
 
