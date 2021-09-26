@@ -21,7 +21,7 @@ Page({
     startTime: '',
     endTime: '',
     state: '', //状态
-    teamHeat: '', //活动热度
+    teamHeat: 0, //活动热度
     school: '',
     area: '',
 
@@ -42,7 +42,10 @@ Page({
       wx.reLaunch({
         url: '../login/login'
       })
+    } else {
+      this.init()
     }
+
   },
 
   /**
@@ -56,7 +59,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.init()
   },
 
   /**
@@ -94,6 +97,42 @@ Page({
 
   },
 
+  init() {
+    let temp = this.phone
+
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    //获取当前时间
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    //年
+    var Y = date.getFullYear();
+    //月
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //日
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var date = Y + "-" + M + "-" + D
+
+    this.setData({
+      teamId: '',
+      teamTile: '',
+      active: '', //活动分区
+      teamDetail: '',
+      teamLogo: '/icons/logo2.jpg',
+      initiator: temp, //发起人
+      teamNum: '',
+      joinNum: 1,
+      initiationTime: date, //发起时间
+      changeTime: date, //上一次修改的时间
+      startTime: '',
+      endTime: '',
+      state: '组队中', //状态
+      teamHeat: 0, //活动热度
+      school: '',
+      area: '',
+    })
+  },
+
   teamTileInput: function (e) {
     this.setData({
       teamTile: e.detail.value
@@ -116,7 +155,7 @@ Page({
       sourceType: ['album', 'camera'],
       // 指定来源是相册还是相机，默认两个都有   
       success: function (res) {
-        console.log('图片上成功',res)
+        console.log('图片上成功', res)
         _this.setData({
           teamLogo: res.tempFilePaths
         })
@@ -166,6 +205,89 @@ Page({
       endTime: e.detail.value
     });
   },
-  
+
+  addTeamData() {
+    let that = this
+
+    if (that.data.teamTile == '') {
+      wx.showToast({
+        title: '队伍名称不能为空',
+        icon: 'none'
+      })
+    } else if (that.data.active == '') {
+      wx.showToast({
+        title: '请选择分区',
+        icon: 'none'
+      })
+    } else if (that.data.teamDetail == '') {
+      wx.showToast({
+        title: '请描述队伍详情',
+        icon: 'none'
+      })
+    } else if (that.data.teamNum == '') {
+      wx.showToast({
+        title: '请输入队伍人数',
+        icon: 'none'
+      })
+    } else if (that.data.startTime == '') {
+      wx.showToast({
+        title: '请选择活动开始时间',
+        icon: 'none'
+      })
+    } else if (that.data.endTime == '') {
+      wx.showToast({
+        title: '请选择活动结束时间',
+        icon: 'none'
+      })
+    } else if (that.data.school == '') {
+      wx.showToast({
+        title: '请输入活动高校',
+        icon: 'none'
+      })
+    } else if (that.data.area == '') {
+      wx.showToast({
+        title: '请选择活动地区',
+        icon: 'none'
+      })
+    } else {
+
+      wx.cloud.database().collection('team').add({
+          data: {
+            // teamId: that.data.teamId, //?
+            teamTile: that.data.teamTile,
+            active: that.data.active, //活动分区
+            teamDetail: that.data.teamDetail,
+            teamLogo: that.data.teamLogo,
+            initiator: that.data.initiator, //发起人
+            teamNum: that.data.teamNum,
+            joinNum: that.data.joinNum,
+            initiationTime: that.data.initiationTime, //发起时间
+            changeTime: that.data.changeTime, //上一次修改的时间
+            startTime: that.data.startTime,
+            endTime: that.data.endTime,
+            state: that.data.state, //状态
+            teamHeat: that.data.teamHeat, //活动热度
+            school: that.data.school,
+            area: that.data.area,
+          },
+          success(res) {
+            wx.showToast({
+              title: '发布成功',
+            })
+            that.init()
+          },
+          fail(err) {
+            wx.showToast({
+              title: '发布失败',
+              icon: 'none'
+            })
+          }
+        })
+        .catch(err => {
+          console.log("teamError获取错误", err)
+        })
+    }
+
+  }
 
 })

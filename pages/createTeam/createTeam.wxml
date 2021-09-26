@@ -51,7 +51,7 @@
     <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动高校:</text>
   </view>
   <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text" bindinput="shoolInput" value="{{shool}}"></input>
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text" bindinput="schoolInput" value="{{shool}}"></input>
     <view class="a1"></view>
   </view>
 </view>
@@ -102,5 +102,5 @@
 
 <!-- 发布按钮 -->
 <view style="padding-top: 15px; padding-bottom: 50px;">
-  <button style="width: 95%" class="btn" bindtap="submit">发布组队</button>
+  <button style="width: 95%" class="btn" bindtap="addTeamData">发布组队</button>
 </view>
