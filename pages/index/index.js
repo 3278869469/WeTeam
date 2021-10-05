@@ -9,8 +9,15 @@ Page({
     {url:'https://i.niupic.com/images/2021/08/23/9sCi.png'} ,  
     {url:'https://i.niupic.com/images/2021/08/23/9sCk.png'}, 
     ],
-    contentitems:['','','',''],
+    contentitems:['','','','','',''],
   },
   onLoad: function () {  
-  } 
+  },
+
+  // 页面跳转
+  moreTeam(){
+    wx.switchTab({ 
+      url: '../team/team', 
+      }) 
+  },
 })

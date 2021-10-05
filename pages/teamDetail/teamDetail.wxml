@@ -1,0 +1,132 @@
+<!--队伍名称-->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC; font-weight:Bold;color:#1296db; font-size:13pt; padding-left: 48rpx;">队伍名称:</text>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" placeholder-class="texts" maxlength="50" auto-focus="true" type="text" value="{{list.teamTile}}" disabled="true"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 活动状态 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">活动状态:</text>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.state}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+<!-- 活动分区 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">活动分区:</text>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{array[list.active]}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+<!-- 队伍图片 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">队伍图片:</text>
+  <view style="padding-left: 40rpx; padding-top: 5px;">
+    <image style="width:80%; height:80%;" mode="widthFix" src="{{list.teamLogo}}"></image>
+  </view>
+</view>
+
+<!-- 队伍详细内容 -->
+<view style="padding-top: 10px; padding-left: 40rpx; padding-right: 40rpx;">
+  <textarea style=" padding-top: 10rpx; padding-left:8rpx; background-color: #ecebeba4; width: auto;" auto-focus="true" type="text" value="{{list.teamDetail}}" disabled="true"></textarea>
+</view>
+
+
+<!-- 发起人 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">队伍发起人:</text>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.initiator}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+
+<!-- 队伍人数 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">队伍人数:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="number" value="{{list.teamNum}}" disabled="true"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 已加入的人数 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">已加入的人数:</text>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.joinNum}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+<!-- 活动高校 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动高校:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text" value="{{list.school}}" disabled="true"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+<!-- 活动地区 -->
+<view style="padding-top: 10px;">
+  <view>
+    <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动地区:</text>
+  </view>
+  <view style="padding-left: 40rpx; ">
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="" value="{{list.area}}" disabled="true"></input>
+    <view class="a1"></view>
+  </view>
+</view>
+
+
+<!-- 队伍发起时间 -->
+<view style="padding-top: 10px;">
+  <text style="font:PingFang SC;font-weight:Bold;color:#333333CC;font-size:12pt;padding-left: 48rpx;">队伍发起时间:</text>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.initiationTime}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+<!-- 活动开始时间 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text
+      style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动开始时间:</text>
+  </view>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.startTime}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+<!-- 活动结束时间 -->
+<view style="padding-top: 10px;  justify-content:flex-start;">
+  <view>
+    <text
+      style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动结束时间:</text>
+  </view>
+    <view style="padding-left: 40rpx; ">
+      <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" value="{{list.endTime}}" disabled="true"></input>
+      <view class="a1"></view>
+    </view>
+</view>
+
+
+<!-- 申请加入队伍 -->
+<view style="padding-top: 15px; padding-bottom: 50px;">
+  <button style="width: 95%" class="btn" bindtap="addTeam">申请加入队伍</button>
+</view>

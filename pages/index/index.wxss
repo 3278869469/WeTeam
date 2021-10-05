@@ -88,3 +88,18 @@
     padding-bottom: 1%;
     padding-right:  1%;
   }
+
+  .search{
+    position: relative;
+    padding-bottom: 3px;
+   }
+   .search input{
+    border:1px solid rgb(136, 135, 135);
+    border-radius: 12px;
+    height: 40px;
+   }
+   .icons{
+    position: absolute;
+    right: 20px;
+    top:7px;
+   }

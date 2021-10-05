@@ -1,13 +1,11 @@
 // pages/createTeam/createTeam.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     phone: '',
     isLogin: false,
-
     teamId: '',
     teamTile: '',
     active: '', //活动分区
@@ -36,7 +34,8 @@ Page({
     let isLogin = wx.getStorageSync('isLogin')
     this.setData({
       phone: phone,
-      isLogin: isLogin
+      isLogin: isLogin,
+      initiator: phone, //发起人
     })
     if (!this.data.isLogin) {
       wx.reLaunch({
@@ -98,8 +97,6 @@ Page({
   },
 
   init() {
-    let temp = this.phone
-
     var timestamp = Date.parse(new Date());
     timestamp = timestamp / 1000;
     //获取当前时间
@@ -111,15 +108,13 @@ Page({
     var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
     //日
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-    var date = Y + "-" + M + "-" + D
-
+    var date = Y + "-" + M + "-" + D;
+    
     this.setData({
-      teamId: '',
       teamTile: '',
       active: '', //活动分区
       teamDetail: '',
       teamLogo: '/icons/logo2.jpg',
-      initiator: temp, //发起人
       teamNum: '',
       joinNum: 1,
       initiationTime: date, //发起时间
@@ -137,6 +132,7 @@ Page({
     this.setData({
       teamTile: e.detail.value
     })
+    console.log(this.data.teamTile)
   },
 
   selectActive: function (e) {
@@ -208,7 +204,7 @@ Page({
 
   addTeamData() {
     let that = this
-
+    console.log(that.data.teamTile)
     if (that.data.teamTile == '') {
       wx.showToast({
         title: '队伍名称不能为空',
@@ -253,7 +249,7 @@ Page({
 
       wx.cloud.database().collection('team').add({
           data: {
-            // teamId: that.data.teamId, //?
+            // teamId: that.data.teamId,
             teamTile: that.data.teamTile,
             active: that.data.active, //活动分区
             teamDetail: that.data.teamDetail,

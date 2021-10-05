@@ -2,5 +2,5 @@
   "usingComponents": {
     "SearchInput":"../../components/SearchInput/SearchInput"
   },
-  "navigationBarTitleText": "WeTeam首页"
+  "navigationBarTitleText": "WeTeam"
 }

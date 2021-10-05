@@ -47,6 +47,12 @@
           "pathName": "pages/createTeam/createTeam",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/team/team",
+          "pathName": "pages/team/team",
+          "query": "",
+          "scene": null
         }
       ]
     }

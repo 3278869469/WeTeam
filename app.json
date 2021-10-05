@@ -13,7 +13,8 @@
     "pages/teamHistory/teamHistory",
     "pages/personal/personal",
     "pages/createTeam/createTeam",
-    "pages/myTeam/myTeam"
+    "pages/myTeam/myTeam",
+    "pages/teamDetail/teamDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

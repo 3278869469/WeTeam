@@ -1,31 +1,35 @@
-<view>
+<!-- <view> -->
   <!--搜索框 开始-->
-  <input class="inputText" placeholder="搜索想要的队伍" bindinput="searchInput" />
+  <view class='search'>
+    <input type='text' placeholder='请输入您要搜索的内容' bindinput='input' bindconfirm='confirm' />
+    <icon type='search' class='icons'></icon>
+  </view>
+  <!-- <input class="inputText" placeholder="搜索想要的队伍" bindinput="searchInput" /> -->
   <!--搜索框 结束-->
-</view>
+<!-- </view> -->
 
-<!--index.wxml-->  
-    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">  
-      <block wx:for="{{movies}}" wx:for-index="index">  
-        <swiper-item>  
-          <image src="{{item.url}}" class="slide-image" mode="aspectFill"/>  
-        </swiper-item>  
-      </block>  
-    </swiper>  
+<!--index.wxml-->
+<swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+  <block wx:for="{{movies}}" wx:for-index="index">
+    <swiper-item>
+      <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+    </swiper-item>
+  </block>
+</swiper>
 
 <view class="header">
- <text>推荐队伍</text>
- <text class="text-all">更多推荐</text>
+  <text>推荐队伍</text>
+  <text class="text-all" bindtap="moreTeam">更多推荐</text>
 </view>
 
 <view class='content'>
   <!-- wx:for循环使用该布局 -->
-    <view class='content-item' wx:for="{{contentitems}}">
-      <image src="../../icons/logo2宽.jpg"/>
-      <view class='content-item-text'>
-        <text>
+  <view class='content-item' wx:for="{{contentitems}}">
+    <image src="../../icons/logo2宽.jpg" />
+    <view class='content-item-text'>
+      <text>
         优秀队伍
-        </text>
-      </view>
+      </text>
     </view>
   </view>
+</view>

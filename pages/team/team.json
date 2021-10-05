@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "table team",
+  "navigationBarTitleText": "更多队伍",
   "usingComponents": {
     "mytable":"../../components/table/table"
   }
