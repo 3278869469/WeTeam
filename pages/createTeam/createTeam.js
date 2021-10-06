@@ -37,6 +37,7 @@ Page({
       isLogin: isLogin,
       initiator: phone, //发起人
     })
+    console.log(phone)
     if (!this.data.isLogin) {
       wx.reLaunch({
         url: '../login/login'
@@ -44,6 +45,7 @@ Page({
     } else {
       this.init()
     }
+    
 
   },
 
@@ -58,7 +60,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.init()
+    // this.init()
   },
 
   /**
@@ -109,7 +111,7 @@ Page({
     //日
     var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     var date = Y + "-" + M + "-" + D;
-    
+
     this.setData({
       teamTile: '',
       active: '', //活动分区
@@ -278,9 +280,6 @@ Page({
               icon: 'none'
             })
           }
-        })
-        .catch(err => {
-          console.log("teamError获取错误", err)
         })
     }
 

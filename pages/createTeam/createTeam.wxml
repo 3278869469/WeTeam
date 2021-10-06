@@ -3,7 +3,7 @@
   <text style="font:PingFang SC; font-weight:Bold;color:#1296db; font-size:13pt; padding-left: 48rpx;">队伍名称:</text>
   <view style="padding-left: 40rpx; ">
     <input style=" padding-top: 10rpx; padding-left: 8rpx" placeholder="请填写队伍名称" placeholder-class="texts"
-      placeholder-style="color:#33333366;" maxlength="50" auto-focus="true" type="text" bindinput="teamTileInput"></input>
+      placeholder-style="color:#33333366;" maxlength="50" auto-focus="true" bindinput="teamTileInput" value="{{teamTile}}"></input>
     <view class="a1"></view>
   </view>
 </view>
@@ -51,7 +51,7 @@
     <text style="font:PingFang SC; font-weight:Bold;color:#333333CC; font-size:12pt; padding-left: 48rpx;">活动高校:</text>
   </view>
   <view style="padding-left: 40rpx; ">
-    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type="text" bindinput="schoolInput" value="{{shool}}"></input>
+    <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" bindinput="schoolInput" value="{{school}}"></input>
     <view class="a1"></view>
   </view>
 </view>
