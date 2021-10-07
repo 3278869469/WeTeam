@@ -8,11 +8,14 @@ Page({
    */
   data: {
     array: ['比赛', '运动', '其他'],
-    // user: '',
-    // state: '',
-    // createTime: '',
-    // num: 0,
-    // teamNum:0,
+    list: [],
+    user: '',
+    state: '',
+    createTime: '',
+    num: 0,
+    teamNum: 0,
+    teamTile:'',
+    teamLogo:'',
   },
 
   /**
@@ -21,6 +24,10 @@ Page({
   onLoad: function (options) {
     id = options.id
     this.getDetail()
+    let phone = wx.getStorageSync('phone')
+    this.setData({
+      user: phone, //发起人
+    })
   },
 
   /**
@@ -46,10 +53,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    let phone = wx.getStorageSync('phone')
-    this.setData({
-      user: phone, //发起人
-    })
 
   },
 
@@ -82,12 +85,15 @@ Page({
         console.log('队伍详情页请求成功', res.data)
         this.setData({
           list: res.data,
-
-          state:res.data.state,
+          state: res.data.state,
           createTime: res.data.initiationTime,
-          num:res.data.state.joinNum,
-          teamNum:res.data.state.teamNum,
+          num: res.data.joinNum,
+          teamNum: res.data.teamNum,
+          teamTile:res.data.teamTile,
+          teamLogo:res.data.teamLogo,
         })
+        // console.log("list", res.data.state)
+
       })
       .catch(err => {
         console.log('队伍详情页请求失败', err)
@@ -95,36 +101,46 @@ Page({
   },
 
   addTeam() {
-    if (this.teamNum - this.num > 0) {
-      wx.cloud.database().collection('myTeam').add({
-        data: {
-          userId: this.user,
-          teamId: id,
-          state: this.state,
-          createTime: this.createTime,
-        }
-      })
+    console.log(this.data.teamNum)
+    if (this.data.teamNum - this.data.num > 0) {
+      console.log("未满人")
+      wx.cloud.callFunction({
+          name: 'addMyTeam',
+          data: {
+            userId: this.data.user,
+            teamId: id,
+            state: this.data.state,
+            createTime: this.data.createTime,
+            teamTile:this.data.teamTile,
+            teamLogo:this.data.teamLogo,
+          }
+        })
         .then(res => {
-          num = num+1
+          console.log("加入成功")
+          this.data.num = this.data.num + 1
           wx.cloud.callFunction({
               name: 'addTeam',
               data: {
                 id: id,
-                teamNum: num
+                teamNum: this.data.num
               }
             })
             .then(res => {
               console.log('调用云函数成功', res.result.errMsg)
+              wx.showToast({
+                title: '成功加入',
+              })
             })
             .catch(err => {
               console.log('云函数调用失败', err)
+              wx.showToast({
+                title: '加入失败',
+                icon: 'none'
+              })
             })
-
-          wx.showToast({
-            title: '成功加入',
-          })
         })
         .catch(err => {
+          console.log("加入失败",err)
           wx.showToast({
             title: '加入失败',
             icon: 'none'
@@ -136,8 +152,6 @@ Page({
         icon: 'none'
       })
     }
-
-
   },
 
 })

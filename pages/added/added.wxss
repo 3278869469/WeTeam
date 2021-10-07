@@ -1,1 +1,62 @@
 /* pages/added/added.wxss */
+/* pages/search/search.wxss */
+.search{
+  position: relative;
+  padding-bottom: 2px;
+ }
+ .search input{
+  border:1px solid rgb(136, 135, 135);
+  border-radius: 12px;
+  height: 40px;
+ }
+ .icons{
+  position: absolute;
+  right: 20px;
+  top:7px;
+ }
+ .lists{
+  text-align: center;
+  margin-top: 20px;
+  color: rgb(230, 124, 25);
+ }
+
+ 
+ .container {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgb(221, 239, 243);
+  }
+   
+  .title {
+  font-size: 70rpx;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  }
+
+  .view_tupian_wenzi {
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+    padding: 10px;
+   }
+   .image_1 {
+    width: 175px;
+    height: 150px;
+   }
+   .view_wenzi2 {
+    width: 90px;
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+   }
+   .text_1{
+    font-size: 27rpx;
+    word-break:break-all;
+    color: #7a7878
+   }
+   .text_small{
+    font-size: 27rpx;
+    word-break:break-all;
+    color: #7a7878
+   }

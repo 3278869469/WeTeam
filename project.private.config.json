@@ -53,6 +53,12 @@
           "pathName": "pages/team/team",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/added/added",
+          "pathName": "pages/added/added",
+          "query": "",
+          "scene": null
         }
       ]
     }

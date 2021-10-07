@@ -6,7 +6,9 @@ Page({
    */
   data: {
     phone: '',
-    isLogin: false
+    isLogin: false,
+    list: [],
+    n: 0,
   },
 
   /**
@@ -19,11 +21,13 @@ Page({
       phone: phone,
       isLogin: isLogin
     })
-    if(!this.data.isLogin){
+    if (!this.data.isLogin) {
       wx.reLaunch({
         url: '../login/login'
       })
     }
+
+    this.getMyTeam()
   },
 
   /**
@@ -73,5 +77,23 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  getMyTeam() {
+    wx.cloud.database().collection('myTeam').where({
+        userId: this.data.phone
+      }).get()
+      .then(res => {
+        console.log("查新成功", res)
+        this.setData({
+          list:res.data,
+          n:res.data.length,
+        })
+        console.log(this.data.n)
+      })
+      .catch(err => {
+        console.log("查询失败", err)
+      })
+  },
+
 })
