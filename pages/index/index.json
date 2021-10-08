@@ -2,5 +2,6 @@
   "usingComponents": {
     "SearchInput":"../../components/SearchInput/SearchInput"
   },
-  "navigationBarTitleText": "WeTeam"
+  "navigationBarTitleText": "WeTeam",
+  "navigationBarBackgroundColor": "#1296db"
 }

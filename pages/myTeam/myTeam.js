@@ -5,6 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    list: [],
+    phone: '',
 
   },
 
@@ -12,6 +14,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let phone = wx.getStorageSync('phone')
+    this.setData({
+      phone: phone,
+    })
+    this.init()
 
   },
 
@@ -62,5 +69,28 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  init() {
+    // 云函数调用
+    wx.cloud.database().collection('team').where({
+        initiator: this.data.phone
+      }).get()
+      .then(res => {
+        console.log('队伍列表申请成功', res)
+        this.setData({
+          list: res.data
+        })
+      }).catch(err => {
+        console.log('数据库检索错误', err) //打印错误信息
+      })
+  },
+
+  goDetail(e) {
+    console.log('点击跳转队伍id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '/pages/teamDetail/teamDetail?id=' + e.currentTarget.dataset.id + '&btn=' + '修改队伍信息',
+    })
+  },
+
 })

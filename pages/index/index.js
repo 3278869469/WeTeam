@@ -4,14 +4,17 @@ var app = getApp()
 Page({  
   data: {  
     movies:[  
-    {url:'https://i.niupic.com/images/2021/08/23/9sCg.png'} ,  
-    {url:'https://i.niupic.com/images/2021/08/23/9sCh.jpg'} ,  
-    {url:'https://i.niupic.com/images/2021/08/23/9sCi.png'} ,  
-    {url:'https://i.niupic.com/images/2021/08/23/9sCk.png'}, 
+    {url:'/icons/logo2宽.jpg'} ,  
+    {url:'/icons/top1.JPG'} ,  
+    {url:'/icons/top2.JPG'} ,  
+    {url:'/icons/top3.JPG'}, 
     ],
     contentitems:['','','','','',''],
+    list:[],
   },
   onLoad: function () {  
+    this.getRecommend()
+
   },
 
   // 页面跳转
@@ -20,4 +23,25 @@ Page({
       url: '../team/team', 
       }) 
   },
+
+  getRecommend(){
+    wx.cloud.database().collection('team').orderBy('teamHeat', 'desc').limit(6).get()
+    .then(res => {
+      console.log('队伍列表申请成功', res)
+      this.setData({
+        list: res.data
+      })
+    }).catch(err => {
+      console.log('数据库检索错误', err) //打印错误信息
+    })
+  },
+
+  goDetail(e){
+    console.log('点击跳转队伍id', e.currentTarget.dataset.id)
+    wx.navigateTo({
+      url: '/pages/teamDetail/teamDetail?id=' + e.currentTarget.dataset.id +'&btn='+'加入队伍',
+    })
+  },
+
+
 })

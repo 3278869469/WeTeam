@@ -128,5 +128,5 @@
 
 <!-- 申请加入队伍 -->
 <view style="padding-top: 15px; padding-bottom: 50px;">
-  <button style="width: 95%" class="btn" bindtap="addTeam">加入队伍</button>
+  <button style="width: 95%" class="btn" bindtap="btnFuc">{{btn}}</button>
 </view>

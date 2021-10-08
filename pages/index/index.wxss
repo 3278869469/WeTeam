@@ -1,8 +1,8 @@
 /**index.wxss**/
-/*.swiper {
+.swiper {
     height: 400rpx;
     width: 100%;
-  }*/
+  }
   .inputText { 
     border-left-width: 6px;
     border-left-style: groove;

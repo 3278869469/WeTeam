@@ -14,8 +14,10 @@ Page({
     createTime: '',
     num: 0,
     teamNum: 0,
-    teamTile:'',
-    teamLogo:'',
+    teamTile: '',
+    teamLogo: '',
+    btn: '',
+    myTeamId:'',
   },
 
   /**
@@ -23,23 +25,31 @@ Page({
    */
   onLoad: function (options) {
     id = options.id
+    this.setData({
+      btn: options.btn,
+      myTeamId:options.myTeamId,
+    })
     this.getDetail()
     let phone = wx.getStorageSync('phone')
     this.setData({
       user: phone, //发起人
     })
+    // console.log("id:",id)
+    // console.log('myTeamId:',myTeamId)
+
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {},
+  onReady: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
@@ -89,8 +99,8 @@ Page({
           createTime: res.data.initiationTime,
           num: res.data.joinNum,
           teamNum: res.data.teamNum,
-          teamTile:res.data.teamTile,
-          teamLogo:res.data.teamLogo,
+          teamTile: res.data.teamTile,
+          teamLogo: res.data.teamLogo,
         })
         // console.log("list", res.data.state)
 
@@ -98,6 +108,14 @@ Page({
       .catch(err => {
         console.log('队伍详情页请求失败', err)
       })
+  },
+
+  btnFuc() {
+    if (this.data.btn == '加入队伍') {
+      this.addTeam()
+    } else if (this.data.btn == '退出队伍') {
+      this.delTeam()
+    }
   },
 
   addTeam() {
@@ -111,36 +129,39 @@ Page({
             teamId: id,
             state: this.data.state,
             createTime: this.data.createTime,
-            teamTile:this.data.teamTile,
-            teamLogo:this.data.teamLogo,
+            teamTile: this.data.teamTile,
+            teamLogo: this.data.teamLogo,
           }
         })
         .then(res => {
-          console.log("加入成功")
-          this.data.num = this.data.num + 1
-          wx.cloud.callFunction({
-              name: 'addTeam',
-              data: {
-                id: id,
-                teamNum: this.data.num
-              }
-            })
-            .then(res => {
-              console.log('调用云函数成功', res.result.errMsg)
-              wx.showToast({
-                title: '成功加入',
-              })
-            })
-            .catch(err => {
-              console.log('云函数调用失败', err)
-              wx.showToast({
-                title: '加入失败',
-                icon: 'none'
-              })
-            })
+          console.log("加入成功",res)
+          wx.showToast({
+            title: '加入成功',
+          })
+          // this.data.num = this.data.num + 1
+          // wx.cloud.callFunction({
+          //     name: 'addTeam',
+          //     data: {
+          //       id: id,
+          //       teamNum: this.data.num
+          //     }
+          //   })
+          //   .then(res => {
+          //     console.log('调用云函数成功', res.result.errMsg)
+          //     wx.showToast({
+          //       title: '成功加入',
+          //     })
+          //   })
+          //   .catch(err => {
+          //     console.log('云函数调用失败', err)
+          //     wx.showToast({
+          //       title: '加入失败',
+          //       icon: 'none'
+          //     })
+            // })
         })
         .catch(err => {
-          console.log("加入失败",err)
+          console.log("加入失败", err)
           wx.showToast({
             title: '加入失败',
             icon: 'none'
@@ -152,6 +173,29 @@ Page({
         icon: 'none'
       })
     }
+  },
+
+  delTeam() {
+    console.log("myTeamId:",id)
+    wx.cloud.callFunction({
+        name: 'delMyTeam',
+        data: {
+          id: id
+        }
+      })
+      .then(res => {
+        console.log("退出成功", res)
+        wx.showToast({
+          title: '成功退出',
+        })
+      })
+      .catch(err => {
+        console.log("退出失败", err)
+        wx.showToast({
+          title: '退出失败',
+          icon: 'none'
+        })
+      })
   },
 
 })

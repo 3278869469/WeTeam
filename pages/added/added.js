@@ -9,6 +9,7 @@ Page({
     isLogin: false,
     list: [],
     n: 0,
+    searchInp: "",
   },
 
   /**
@@ -41,7 +42,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getMyTeam()
   },
 
   /**
@@ -86,13 +87,39 @@ Page({
       .then(res => {
         console.log("查新成功", res)
         this.setData({
-          list:res.data,
-          n:res.data.length,
+          list: res.data,
+          n: res.data.length,
         })
         console.log(this.data.n)
       })
       .catch(err => {
         console.log("查询失败", err)
+      })
+  },
+
+  goDetail(e) {
+    console.log('点击跳转队伍id', e.currentTarget.dataset.myTeamId)
+    wx.navigateTo({
+      url: '/pages/teamDetail/teamDetail?id=' + e.currentTarget.dataset.id + '&btn=' + '退出队伍' + '&myTeamId=' + e.currentTarget.dataset.myTeamId,
+    })
+  },
+
+  search(e) {
+    let str = e.detail.value
+
+    wx.cloud.database().collection("myTeam").where({ //collectionName 表示欲模糊查询数据所在collection的名
+        teamTile: { //teamTile表示欲模糊查询数据所在列的名
+          $regex: '.*' + str + '.*', //str表示欲查询的内容，‘.*’等同于SQL中的‘%’
+          $options: 'i' //$options:'1' 代表这个like的条件不区分大小写,详见开发文档
+        }
+      }).get()
+      .then(res => {
+        console.log('搜索成功', res)
+        this.setData({
+          list: res.data
+        })
+      }).catch(err => {
+        console.log('搜索失败', err) //打印错误信息
       })
   },
 
