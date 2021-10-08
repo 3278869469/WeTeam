@@ -1,2 +1,13 @@
-<!--pages/message/message.wxml-->
-<text>pages/message/message.wxml</text>
+<!--wxml文件 -->
+<view class="mass">
+    <mymassage></mymassage>
+</view>
+<view>
+    <mymassage></mymassage>
+</view>
+<view>
+    <mymassage></mymassage>
+</view>
+<view>
+    <mymassage></mymassage>
+</view>

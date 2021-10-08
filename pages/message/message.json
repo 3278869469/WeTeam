@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "消息通知",
+  "usingComponents": {
+    "mymassage":"../../components/massage/massage"
+  }
 }

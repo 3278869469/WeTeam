@@ -1,0 +1,4 @@
+<!--components/massage/massage.wxml-->
+<view class="box">
+<text>你好，你有一条新消息</text>
+</view>
