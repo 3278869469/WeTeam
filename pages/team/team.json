@@ -1,6 +1,5 @@
 {
   "navigationBarTitleText": "更多队伍",
-  "navigationBarTextStyle": "white",
   "usingComponents": {
     "mytable":"../../components/table/table"
     

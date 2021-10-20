@@ -3,5 +3,6 @@
     "SearchInput":"../../components/SearchInput/SearchInput"
   },
   "navigationBarTitleText": "WeTeam",
-  "navigationBarBackgroundColor": "#1296db"
+  "navigationBarBackgroundColor": "#00a3fe",
+  "navigationBarTextStyle": "white"
 }

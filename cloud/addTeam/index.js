@@ -9,7 +9,8 @@ exports.main = async (event, context) => {
     .doc(event.id)
     .update({
       data: {
-        joinNum: event.joinNum
+        joinNum: event.joinNum,
+        teamHeat: event.teamHeat,
       }
     })
 }

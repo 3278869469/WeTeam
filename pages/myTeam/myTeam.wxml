@@ -6,7 +6,7 @@
 </view>
 
 <view wx:for="{{list}}">
-  <view class="view_tupian_wenzi" bindtap="goDetail" data-myTeamId="{{item._id}}" data-id="{{item.teamId}}">
+  <view class="view_tupian_wenzi" bindtap="goDetail" data-id="{{item._id}}">
     <image class="image_1" src="{{item.teamLogo}}" />
     <view class="view_wenzi2">
       <text>{{item.teamTile}}</text>

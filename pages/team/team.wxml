@@ -4,10 +4,22 @@
   <icon type='search' class='icons'></icon>
 </view>
 
-<view class="container">
+<!-- <view class="container">
   <mytable tableThemes="{{themeArr}}" tableItems="{{itemArr}}"></mytable>
   <mytable tableThemes="{{aArr}}" tableItems="{{bArr}}"></mytable>
+</view> -->
+<view class="menu_box">
+ <text class='menu1 {{menuTapCurrent=="0"?"borders":""}}' data-current="0" catchtap="menuTap">全部</text>
+ <text class='menu1 {{menuTapCurrent=="1"?"borders":""}}' data-current="1" catchtap="menuTap">同学校</text>
+ <text class='menu1 {{menuTapCurrent=="2"?"borders":""}}' data-current="2" catchtap="menuTap">同地区</text>
 </view>
+<view class="menu_box">
+ <text class='menu1 {{menuTapCurrent1=="0"?"borders":""}}' data-current1="0" catchtap="menuTap1">全部</text>
+ <text class='menu1 {{menuTapCurrent1=="1"?"borders":""}}' data-current1="1" catchtap="menuTap1">比赛</text>
+ <text class='menu1 {{menuTapCurrent1=="2"?"borders":""}}' data-current1="2" catchtap="menuTap1">运动</text>
+ <text class='menu1 {{menuTapCurrent1=="3"?"borders":""}}' data-current1="3" catchtap="menuTap1">其他</text>
+</view>
+
 
 
 <view wx:for="{{list}}">

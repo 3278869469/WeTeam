@@ -30,7 +30,14 @@
     </view>
     <view class="personView">
         <label class="label">地区</label>
-        <input bindinput="addressInput" disabled="{{!edit}}" value="{{address}}"></input>
+        <picker mode="region" bindchange="addressInput" disabled="{{!edit}}">
+            <view style="padding-left: 40rpx; ">
+                <input style=" padding-top: 10rpx; padding-left: 8rpx" maxlength="50" auto-focus="true" type=""
+                    value="{{address}}" disabled="true"></input>
+                <view class="a1"></view>
+            </view>
+        </picker>
+        <!-- <input bindinput="addressInput" disabled="{{!edit}}" value="{{address}}"></input> -->
     </view>
     <view class="division"></view>
     <view class="personView">

@@ -89,7 +89,7 @@ Page({
   goDetail(e) {
     console.log('点击跳转队伍id', e.currentTarget.dataset.id)
     wx.navigateTo({
-      url: '/pages/teamDetail/teamDetail?id=' + e.currentTarget.dataset.id + '&btn=' + '修改队伍信息',
+      url: '/pages/myTeamDetail/myTeamDetail?id=' + e.currentTarget.dataset.id,
     })
   },
 

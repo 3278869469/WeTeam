@@ -1,0 +1,24 @@
+/* pages/myTeamDetail/myTeamDetail.wxss */
+.a1{
+  width: 90%;
+  height: 2rpx;
+  background:  #a8a7a7d7;
+}
+
+.btn { 
+  margin-top: 40px; 
+  border-radius:10px;
+  color: white;
+  background-color: #1296db;
+ }
+ /* 按钮点击改变颜色 */
+.btn.button-hover {
+  color: white;
+  background-color: #1e89c1;
+}
+
+
+
+
+
+

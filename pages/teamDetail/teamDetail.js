@@ -17,7 +17,8 @@ Page({
     teamTile: '',
     teamLogo: '',
     btn: '',
-    myTeamId:'',
+    myTeamId: '',
+    teamHeat: 0,
   },
 
   /**
@@ -27,7 +28,7 @@ Page({
     id = options.id
     this.setData({
       btn: options.btn,
-      myTeamId:options.myTeamId,
+      myTeamId: options.myTeamId,
     })
     this.getDetail()
     let phone = wx.getStorageSync('phone')
@@ -51,6 +52,7 @@ Page({
    */
   onShow: function () {
   },
+
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -101,6 +103,7 @@ Page({
           teamNum: res.data.teamNum,
           teamTile: res.data.teamTile,
           teamLogo: res.data.teamLogo,
+          teamHeat: res.data.teamHeat,
         })
         // console.log("list", res.data.state)
 
@@ -134,31 +137,32 @@ Page({
           }
         })
         .then(res => {
-          console.log("加入成功",res)
-          wx.showToast({
-            title: '加入成功',
-          })
-          // this.data.num = this.data.num + 1
-          // wx.cloud.callFunction({
-          //     name: 'addTeam',
-          //     data: {
-          //       id: id,
-          //       teamNum: this.data.num
-          //     }
-          //   })
-          //   .then(res => {
-          //     console.log('调用云函数成功', res.result.errMsg)
-          //     wx.showToast({
-          //       title: '成功加入',
-          //     })
-          //   })
-          //   .catch(err => {
-          //     console.log('云函数调用失败', err)
-          //     wx.showToast({
-          //       title: '加入失败',
-          //       icon: 'none'
-          //     })
-            // })
+          console.log("加入成功", res)
+          
+          console.log('num = ', this.data.num)
+          console.log('teamHeat = ', this.data.teamHeat+1)
+          wx.cloud.callFunction({
+              name: 'addTeam',
+              data: {
+                id: id,
+                joinNum: (this.data.num + 1),
+                teamHeat: (this.data.teamHeat + 1),
+              }
+            })
+            .then(res => {
+              console.log('调用云函数成功', res.result.errMsg)
+              wx.showToast({
+                title: '成功加入',
+              })
+              this.getDetail()
+            })
+            .catch(err => {
+              console.log('云函数调用失败', err)
+              wx.showToast({
+                title: '加入失败',
+                icon: 'none'
+              })
+            })
         })
         .catch(err => {
           console.log("加入失败", err)
@@ -176,7 +180,7 @@ Page({
   },
 
   delTeam() {
-    console.log("myTeamId:",id)
+    console.log("myTeamId:", id)
     wx.cloud.callFunction({
         name: 'delMyTeam',
         data: {

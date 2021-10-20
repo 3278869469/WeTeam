@@ -59,3 +59,20 @@
     word-break:break-all;
     color: #7a7878
    }
+
+
+   .menu_box{
+    display: flex;
+    height: 80rpx;
+   }
+   .menu1{
+    flex: 1;
+    font-size:30rpx;
+    line-height: 80rpx;
+    text-align: center;
+   }
+   .borders{
+    border-bottom: 4rpx solid #1296db;
+    color: #00a3fe;
+   }
+ 
