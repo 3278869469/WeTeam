@@ -12,7 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getTeam()
   },
 
   /**
@@ -62,5 +62,22 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+  getTeam() {
+    wx.cloud.database().collection('dismissTeam').where({
+
+      }).get()
+      .then(res => {
+        console.log("查新成功", res)
+        this.setData({
+          list: res.data,
+          n: res.data.length,
+        })
+        console.log(this.data.n)
+      })
+      .catch(err => {
+        console.log("查询失败", err)
+      })
+  },
 })

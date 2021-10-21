@@ -18,6 +18,9 @@ Page({
     btn: '',
     myTeamId: '',
     teamHeat: 0,
+
+    edit: true,
+    btnString:"修改队伍信息",
   },
 
   /**
@@ -109,12 +112,73 @@ Page({
       })
   },
 
-  edit(){
+  edit() {
+    if(this.data.btnString == "修改队伍信息"){
+      this.setData({
+        edit: false,
+        btnString:"保存"
+      })
+    }else{
+      this.setData({
+        edit: true,
+        btnString:"修改队伍信息"
+      })
+    }
+    
 
   },
-  
-  dismiss(){
 
+  dismiss() {
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    //获取当前时间
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    //年
+    var Y = date.getFullYear();
+    //月
+    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+    //日
+    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var nowDate = Y + "-" + M + "-" + D;
+    console.log(nowDate)
+
+    wx.cloud.database().collection('dismissTeam').add({
+      data: {
+        teamId:id,
+        state:'已解散',
+        dismissTime:nowDate,
+        teamTile:this.data.teamTile,
+        teamLogo:this.data.teamLogo
+      },
+      success(res) {
+        wx.showToast({
+          title: '解散成功',
+        })
+      },
+      fail(err) {
+        wx.showToast({
+          title: '解散失败',
+          icon: 'none'
+        })
+      }
+    })
+
+  },
+
+  timeStamp(value) {
+    let date = new Date(value*1000); //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+    let year = date.getFullYear();
+    let month = ("0" + (date.getMonth() + 1)).slice(-2);
+    let sdate = ("0" + date.getDate()).slice(-2);
+    let hour = ("0" + date.getHours()).slice(-2);
+    let minute = ("0" + date.getMinutes()).slice(-2);
+    let second = ("0" + date.getSeconds()).slice(-2);
+    // 拼接
+    let result = year + "-" + month + "-" + sdate + " " + hour + ":" + minute //+ ":" + second;
+    //let result = month + "." + sdate //+ ":" + second;
+    // 返回
+    return result;
   },
 
 

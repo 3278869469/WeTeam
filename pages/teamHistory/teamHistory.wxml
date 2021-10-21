@@ -1,2 +1,11 @@
 <!--pages/teamHistory/teamHistory.wxml-->
-<text>pages/teamHistory/teamHistory.wxml</text>
+<view wx:for="{{list}}">
+  <view class="view_tupian_wenzi" bindtap="goDetail" data-myTeamId="{{item._id}}" data-id="{{item.teamId}}">
+    <image class="image_1" src="{{item.teamLogo}}" />
+    <view class="view_wenzi2">
+      <text>{{item.teamTile}}</text>
+      <text class="text_1">{{item.state}}</text>
+      <input type="text" class="text_small"></input>
+    </view>
+  </view>
+</view>
