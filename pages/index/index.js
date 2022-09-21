@@ -1,6 +1,6 @@
 //index.js  
 //获取应用实例  
-var app = getApp()  
+var app = getApp() 
 Page({  
   data: {  
     movies:[  
@@ -14,7 +14,6 @@ Page({
   },
   onLoad: function () {  
     this.getRecommend()
-
   },
 
   // 页面跳转

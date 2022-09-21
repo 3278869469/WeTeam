@@ -8,7 +8,7 @@ App({
    */
   onLaunch: function () {
     wx.cloud.init({
-      env: 'cloud1-8gzt9y9q6803155f'
+      env: 'env-5gufj42i39913899'
     })
   },
 
